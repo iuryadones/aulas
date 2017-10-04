@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Prof. Iury Adones">
+  <meta name="dcterms.date" content="2017-03-10">
+  <title>Python easy</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; } /* Keyword */
+code > span.dt { color: #dfdfbf; } /* DataType */
+code > span.dv { color: #dcdccc; } /* DecVal */
+code > span.bn { color: #dca3a3; } /* BaseN */
+code > span.fl { color: #c0bed1; } /* Float */
+code > span.ch { color: #dca3a3; } /* Char */
+code > span.st { color: #cc9393; } /* String */
+code > span.co { color: #7f9f7f; } /* Comment */
+code > span.ot { color: #efef8f; } /* Other */
+code > span.al { color: #ffcfaf; } /* Alert */
+code > span.fu { color: #efef8f; } /* Function */
+code > span.er { color: #c3bf9f; } /* Error */
+code > span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+code > span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code > span.sc { color: #dca3a3; } /* SpecialChar */
+code > span.vs { color: #cc9393; } /* VerbatimString */
+code > span.ss { color: #cc9393; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #f0dfaf; } /* ControlFlow */
+code > span.op { color: #f0efd0; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #7f9f7f; } /* Documentation */
+code > span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code > span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Python easy</h1>
+  <p class="author">Prof. Iury Adones</p>
+  <p class="date">03/10/2017</p>
+</section>
+
+<section id="cronograma" class="slide level2">
+<h2>Cronograma</h2>
+<ol type="1">
+<li class="fragment">Python Básico</li>
+<li class="fragment">Arquivos</li>
+<li class="fragment">Estruturas de controle</li>
+<li class="fragment">Módulos padrões</li>
+<li class="fragment">Funções</li>
+<li class="fragment">Módulos e Pacotes</li>
+<li class="fragment">Python funcional</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="python-básico">1.1 - Python Básico</h3>
+<p>Python é uma Linguagem interpretada</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span>
+<span class="ex">Python</span> 3.6.2 (default, Jul 20 2017, 03:52:27) 
+[<span class="ex">GCC</span> 7.1.1 20170630] on linux
+<span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.
+<span class="op">&gt;&gt;&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(<span class="st">&quot;Olá Mundo!&quot;</span>)
+<span class="ex">Ol</span>á Mundo</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="tipagem-dinâmica">1.2 - Tipagem dinâmica</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = 1
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;int&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="st">&#39;abacaxi&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = 1.0
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="tipagem-dinâmica-1">1.2.1 - Tipagem dinâmica</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = [1, 2.2, <span class="st">&#39;23&#39;</span>, <span class="st">&#39;ola&#39;</span>, None]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;list&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="dt">{1,2}</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;set&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="dt">{1:2}</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;dict&#39;</span><span class="op">&gt;</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="script-com-python">1.3 - Script com python</h3>
+<blockquote>
+<p>Extensão python <code>.py</code></p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">touch</span> programa-init.py
+$ <span class="bu">echo</span> <span class="st">&quot;print(&#39;Ola mundo&#39;)&quot;</span> <span class="op">&gt;&gt;</span> programa-init.py
+$ <span class="ex">python</span> programa-init.py
+<span class="ex">Ola</span> mundo</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="script-com-python-1">1.3.1 - Script com python</h3>
+<blockquote>
+<p>Extensão python <code>.py</code></p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">echo</span> <span class="st">&quot;print(&#39;Ola novamente&#39;)&quot;</span> <span class="op">&gt;</span> programa-other.py
+$ <span class="ex">python</span> programa-other.py
+<span class="ex">Ola</span> novamente</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="delimitado-por-indentação">1.4 - Delimitado por indentação</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">0</span>
+<span class="bu">print</span>(<span class="st">&quot;O valor de a é &quot;</span>)
+<span class="cf">if</span> a <span class="op">==</span> <span class="dv">0</span>:
+    <span class="bu">print</span> <span class="st">&quot;zero&quot;</span>
+<span class="cf">else</span>:
+    <span class="bu">print</span> a</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="listas">1.5 - Listas []</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = [<span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, 1, 2, 5.0]
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(a[0])
+<span class="st">&quot;A&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(len(a))
+<span class="ex">5</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a[4])
+<span class="op">&lt;</span><span class="ex">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="é-legal-mexer-com-listas">1.5.1 - É legal mexer com listas</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">liguagem <span class="op">=</span> <span class="st">&quot;python&quot;</span>
+caracter <span class="op">=</span> <span class="bu">list</span>(liguagem)
+<span class="bu">print</span>(caracter)
+
+palavra <span class="op">=</span> <span class="st">&quot;&quot;</span>.join(caracter)
+<span class="bu">print</span>(palavra)</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="lista-é-mutável">1.5.2 - Lista é mutável</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">matrix <span class="op">=</span> [<span class="dv">0</span>]
+matrix <span class="op">=</span> matrix<span class="op">*</span><span class="dv">3</span>
+<span class="bu">print</span>(matrix)
+matrix[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
+<span class="bu">print</span>(matrix)</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="saiba-mais-sobre-listas">1.5.3 - Saiba mais sobre listas</h3>
+<p>About list():</p>
+<ul>
+<li class="fragment">help(list) ou help([])</li>
+<li class="fragment">dir(list) ou dir([])</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="dicionários-dict">1.6 - Dicionários dict()</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">dic <span class="op">=</span> {<span class="st">&#39;lang&#39;</span>: <span class="st">&quot;python&quot;</span>}
+<span class="bu">print</span>(dic[<span class="st">&#39;lang&#39;</span>])
+
+dic[<span class="st">&quot;lib&quot;</span>] <span class="op">=</span> <span class="st">&#39;django&#39;</span>
+<span class="bu">print</span>(dic)
+
+<span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{}</span><span class="ch">\n</span><span class="st">&quot;</span>.<span class="bu">format</span>(dic.keys()))
+<span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">%</span>dic.values())</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="dicionários-dict-1">1.6.1 - Dicionários dict()</h3>
+<p>About dict():</p>
+<ul>
+<li class="fragment">help(dict)</li>
+<li class="fragment">dir(dict)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="tuplas-tuple">1.7 - Tuplas tuple()</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">1</span>,2,3
+<span class="kw">(</span><span class="ex">1</span>, 2, 3<span class="kw">)</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">tuple</span>([1, 2, 3])
+<span class="kw">(</span><span class="ex">1</span>, 2, 3<span class="kw">)</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">t</span> = tuple([0, 0, 0])
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">t</span>[1] = 2
+<span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span>
+  <span class="ex">File</span> <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="ex">TypeError</span>: <span class="st">&#39;tuple&#39;</span> object does not support item assignment
+<span class="op">&gt;&gt;&gt;</span> 
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">l</span> = list(t)
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(l)
+[<span class="ex">0</span>, 0, 0]
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">l</span>[1] = 2
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(l)
+[<span class="ex">0</span>, 2, 0]</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="tuplas-tuple-1">1.7.1 - Tuplas tuple()</h3>
+<p>About tuple():</p>
+<ul>
+<li class="fragment">help(tuple)</li>
+<li class="fragment">dir(tuple)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="conjuntos-set">1.8 - Conjuntos set()</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="kw">set(</span>[<span class="ex">1</span>,2,3,3,2,1]<span class="kw">)</span>
+{<span class="ex">1</span>, 2, 3}
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">s</span> = {1, 2, 3}
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">s.union</span>(<span class="dt">{2,3,5}</span>)
+{<span class="ex">1</span>, 2, 3, 5}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="set">1.8 - set()</h3>
+<p>About set():</p>
+<ul>
+<li class="fragment">help(set)</li>
+<li class="fragment">dir(set)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="arquivos">Arquivos</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="estrutura-de-controle">Estrutura de controle</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="módulos-padrões">Módulos padrões</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="funções">Funções</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="módulos-e-pacotes">Módulos e Pacotes</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="python-funcional">Python funcional</h3>
+</section>
+<section class="slide level2">
+
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
