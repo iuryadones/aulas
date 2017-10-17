@@ -80,8 +80,9 @@ $ <span class="ex">python</span> -m django --version
 </section><section id="start-project" class="slide level2">
 <h2>START PROJECT</h2>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">django-admin</span> startproject stox</code></pre></div>
-</section><section id="tree" class="slide level2">
-<h2>TREE</h2>
+</section><section class="slide level2">
+
+<p>TREE</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">.</span>
 └── <span class="ex">stox</span>
     ├── <span class="ex">manage.py</span>
@@ -90,8 +91,9 @@ $ <span class="ex">python</span> -m django --version
         ├── <span class="ex">settings.py</span>
         ├── <span class="ex">urls.py</span>
         └── <span class="ex">wsgi.py</span></code></pre></div>
-</section><section id="cd-project" class="slide level2">
-<h2>CD PROJECT</h2>
+</section><section class="slide level2">
+
+<p>CD PROJECT</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span> stox</code></pre></div>
 </section><section id="runserver" class="slide level2">
 <h2>RUNSERVER</h2>
@@ -123,8 +125,9 @@ $ <span class="ex">python</span> -m django --version
 </section><section id="startapp" class="slide level2">
 <h2>STARTAPP</h2>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py startapp core</code></pre></div>
-</section><section id="tree-1" class="slide level2">
-<h2>TREE</h2>
+</section><section class="slide level2">
+
+<p>TREE</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">core</span>
 ├── <span class="ex">__init__.py</span>
 ├── <span class="ex">admin.py</span>
@@ -167,10 +170,259 @@ urlpatterns <span class="op">=</span> [
 <figure>
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAAB7CAIAAABl+qUZAAAAA3NCSVQICAjb4U/gAAAaw0lEQVR4Xu2defhV0/fHfxGSjBnKnJIhmSpTMjWRX4+kJBEZ+hEK9Qj1fAg9hjKk5IeUJJUpUqjMMiTzGJU5FIXMhN/r913Pdz/ne/Y95+5zz7n3nHvvun98nvvZZ529136f/d5r7bXP3avWK6+88l8RP1999dU333yz995777DDDhFvVfEKR+Cjjz569dVXN99884YNG1Z4VzPTvTWiavL3338vX758xx13VAJHha4a5BkVTZs2ZYQwTqqhv1noY2QOf/vtt//888/OO++cBe1VhwwiwNhghDBOMqhbRaoUmcPLli1r1KjROuusU5FwaKfiI8DYYIQwTuJXpTW4IBCNwytXrvzjjz/UCLsgW80yjBDGCaOlmkEoWd+jcfjrr7/eeuut119//ZLppw2VIwKMEMYJo6UclS87nWu7a/zjjz/++uuvzZo1c79FJasWAcbJ7NmzGTO+GZ+l8nfffff999/zJSlwNtpoo0022aRWrVpJVVhe9UTgMNPqZpttBlhBPTzjjDN8l/77X58geS2vYAQYJ4wWxoyPw8SrV6xYwb5G7doRxl4IUD/88MPSpUvXXXfdunXrhohV8CVXXxoLvGrVqp122ikci//1fJB88cUXZ86cGX6LXF29evUDDzxwyCGHbLDBBpMnT/besnDhwpNPPnm33XbbcsstO3fu/Oabb8pVoiYI+z69evXK2dwjjzzSoUOH7bbbDoEvvvgipwyFLmIhqnqr/euvv4YNG8ZGCzulRx111AcffOC9GtJQYZeo/KWXXtp9991/+eWXoN6VuJzRwphh5HjbxfwCIJ+klNlwww1hL/NC1e5muXKYCRWwttlmm0jQn3feeY40xrm64447+vXrB1F9TUyfPn2//fabNWvWO++806JFi6OPPpoHhswWW2zBEDEfIii8WnDQQQfZGj733HP4CKIMd3Xp0iXnQHcUC1HV2/RNN900fvz4G2644eWXX8YinXjiieZqSEOFXZKaIT/dz445YrQwZnyrYji89tprJ7tUbtCgwc8//0wUzX701VDixOE///wThuQ1wjZem266qSONkZwxY8axxx5ru1gXXXQRDMSE4p7V1NQg8MQTT9htPfnkkyy0unXrZl+69tprBwwY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" alt="ooohhh" style="width:400.0%" style="height:400.0%" /><figcaption>ooohhh</figcaption>
 </figure>
+</section><section id="databases" class="slide level2">
+<h2>DATABASES</h2>
+<p><code>&lt;project&gt;/settings.py</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">DATABASES <span class="op">=</span> {
+    <span class="st">'default'</span>: {
+        <span class="st">'ENGINE'</span>: <span class="st">'django.db.backends.sqlite3'</span>,
+        <span class="st">'NAME'</span>: os.path.join(BASE_DIR, <span class="st">'db.sqlite3'</span>),
+    }
+}</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>ENGINE</p>
+</blockquote>
+<ul>
+<li>‘django.db.backends.sqlite3’</li>
+<li>‘django.db.backends.postgresql’</li>
+<li>‘django.db.backends.mysql’</li>
+<li>‘django.db.backends.oracle’</li>
+</ul>
+</section><section class="slide level2">
+
+<blockquote>
+<p>NAME</p>
+</blockquote>
+<p>O valor padrão os.path.join(BASE_DIR, ‘db.sqlite3’), irá criar este arquivo no diretório do seu projeto.</p>
+</section><section class="slide level2">
+
+<p>Caso não use o SQLite como banco de dados, configurações adicionais como USER, PASSWORD, e HOST deverão ser adicionadas. Para mais detalhes, veja a referência na documentação para DATABASES.</p>
+</section><section id="settings" class="slide level2">
+<h2>SETTINGS</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">LANGUAGE_CODE <span class="op">=</span> <span class="st">'pt-br'</span>
+
+TIME_ZONE <span class="op">=</span> <span class="st">'America/Recife'</span></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>INSTALLED_APPS</p>
+</blockquote>
+<ul>
+<li>django.contrib.admin – O admin site.</li>
+<li>django.contrib.auth – Um sistema de autenticação.</li>
+<li>django.contrib.contenttypes – Um framework para tipos de conteúdo.</li>
+<li>django.contrib.sessions – Um framework de sessão.</li>
+<li>django.contrib.messages – Um framework de envio de mensagem.</li>
+<li>django.contrib.staticfiles – Um framework para gerenciamento de arquivos estáticos.</li>
+</ul>
+</section><section class="slide level2">
+
+<blockquote>
+<p>BUILD APPS</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py migrate</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Consulte db.sqlite3</p>
+</blockquote>
+<p><code>&lt;raiz-project&gt;</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">sqlite3</span>
+<span class="ex">sqlite</span><span class="op">&gt;</span> .open db.sqlite3
+<span class="ex">sqlite</span><span class="op">&gt;</span> .schema
+<span class="ex">CREATE</span> TABLE IF NOT EXISTS <span class="st">&quot;django_migrations&quot;</span> (<span class="st">&quot;id&quot;</span> integer NOT NULL PRIMARY KEY AUTOINCREMENT, <span class="st">&quot;app&quot;</span> varchar(255) <span class="ex">NOT</span> NULL, <span class="st">&quot;name&quot;</span> varchar(255) <span class="ex">NOT</span> NULL, <span class="st">&quot;applied&quot;</span> datetime NOT NULL);
+<span class="ex">CREATE</span> TABLE sqlite_sequence(name,seq);</code></pre></div>
+</section><section id="create-models" class="slide level2">
+<h2>CREATE MODELS</h2>
+<p><code>core/models.py</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> django.db <span class="im">import</span> models
+
+
+<span class="kw">class</span> Item(models.Model):
+    item_text <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)
+    descricao_text <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">500</span>)
+    pub_date <span class="op">=</span> models.DateTimeField(<span class="st">'data de publicação'</span>)
+
+
+<span class="kw">class</span> Escolha(models.Model):
+    item <span class="op">=</span> models.ForeignKey(Item, on_delete<span class="op">=</span>models.CASCADE)
+    escolha_text <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">200</span>)
+    boolean <span class="op">=</span> models.IntegerField(default<span class="op">=</span><span class="dv">0</span>)</code></pre></div>
+</section><section class="slide level2">
+
+<p><code>&lt;project&gt;/settings.py</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">INSTALLED_APPS <span class="op">=</span> [
+    <span class="st">'core.apps.CoreConfig'</span>,
+    <span class="st">'django.contrib.admin'</span>,
+    <span class="st">'django.contrib.auth'</span>,
+    <span class="st">'django.contrib.contenttypes'</span>,
+    <span class="st">'django.contrib.sessions'</span>,
+    <span class="st">'django.contrib.messages'</span>,
+    <span class="st">'django.contrib.staticfiles'</span>,
+]</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Build Apps</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py makemigrations core</code></pre></div>
+<p>Algo similar aparecerá</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">core/migrations/0001_initial.py</span>
+    <span class="ex">-</span> Create model Escolha
+    <span class="ex">-</span> Create model Item
+    <span class="ex">-</span> Add field item to escolha</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>SQL</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">python</span> manage.py sqlmigrate core 0001</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Check</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py check 
+<span class="ex">System</span> check identified no issues (0 silenced)<span class="ex">.</span></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Todo Ok! execute</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py migrate</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Atividade</p>
+</blockquote>
+<ul>
+<li>Mude seu modelo (em <code>models.py</code>).</li>
+<li>Rode <code>python manage.py makemigrations</code> para criar migrações para suas modificações</li>
+<li>Rode <code>python manage.py migrate</code> para aplicar suas modificações no banco de dados.</li>
+</ul>
+</section><section id="shell-django" class="slide level2">
+<h2>SHELL DJANGO</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py shell</code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">from</span> core.models import Item, Escolha
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.all</span>()
+<span class="op">&lt;</span><span class="ex">QuerySet</span> []<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">from</span> django.utils import timezone
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i</span> = Item(item_text=<span class="st">&quot;Fibra Optica&quot;</span>,
+<span class="ex">...</span>          descricao_text=<span class="st">&quot;Serve para internet&quot;</span>,
+<span class="ex">...</span>          pub_date=timezone.now())   
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i</span>
+<span class="op">&lt;</span><span class="ex">Item</span>: Item object<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.save</span>()
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.id</span>
+<span class="ex">1</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">i.item_text</span>
+<span class="st">'Fibra Optica'</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.descricao_text</span>
+<span class="st">'Serve para internet'</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.pub_date</span>
+<span class="ex">datetime.datetime</span>(2017, 10, 17,
+<span class="ex">...</span>               2, 7, 42, 566605, 
+<span class="ex">...</span>               tzinfo=<span class="op">&lt;</span>UTC<span class="op">&gt;</span>)
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.item_text</span> = <span class="st">&quot;Fibra Optica LA&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.item_text</span>
+<span class="st">'Fibra Optica LA'</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.save</span>()
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.all</span>()
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Item: Item object<span class="op">&gt;</span>]<span class="op">&gt;</span></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Retorna a String e não o Object.</p>
+</blockquote>
+<p><code>core/models.py</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> django.db <span class="im">import</span> models
+<span class="im">from</span> django.utils.encoding <span class="im">import</span> python_2_unicode_compatible
+
+<span class="at">@python_2_unicode_compatible</span>
+<span class="kw">class</span> Item(models.Model):
+    <span class="co"># ...</span>
+    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):
+        <span class="cf">return</span> <span class="va">self</span>.item_text
+
+<span class="at">@python_2_unicode_compatible</span>
+<span class="kw">class</span> Escolha(models.Model):
+    <span class="co"># ...</span>
+    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):
+        <span class="cf">return</span> <span class="va">self</span>.escolha_text</code></pre></div>
+</section><section class="slide level2">
+
+<p><code>core/models.py</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> datetime
+
+<span class="im">from</span> django.db <span class="im">import</span> models
+<span class="im">from</span> django.utils <span class="im">import</span> timezone
+
+
+<span class="kw">class</span> Item(models.Model):
+    <span class="co"># ...</span>
+    <span class="kw">def</span> foi_adicionado_recentemente(<span class="va">self</span>):
+        <span class="cf">return</span> <span class="va">self</span>.pub_date <span class="op">&gt;=</span> timezone.now() <span class="op">-</span> datetime.timedelta(days<span class="op">=</span><span class="dv">1</span>)</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Voltamos a testar com Shell</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py shell</code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">from</span> core.models import Item, Escolha 
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.all</span>()
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Item: Fibra Optica LA<span class="op">&gt;</span>]<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.filter</span>(id=1)
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Item: Fibra Optica LA<span class="op">&gt;</span>]<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.filter</span>(item_text__startswith=<span class="st">'Fibra'</span>)
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Question: Fibra Optica LA<span class="op">&gt;</span>]<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">from</span> django.utils import timezone
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">current_year</span> = timezone.now()<span class="ex">.year</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.get</span>(pub_date__year=current_year)
+<span class="op">&lt;</span><span class="ex">Item</span>: Fibra Optica LA<span class="op">&gt;</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.get</span>(id=2)
+<span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span>
+    <span class="ex">...</span>
+<span class="ex">DoesNotExist</span>: Item matching query does not exist.
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">Item.objects.get</span>(pk=1)
+<span class="op">&lt;</span><span class="ex">Item</span>: Fibra Optica LA<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i</span> = Item.objects.get(pk=1)
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.foi_adicionado_recentemente</span>()
+<span class="ex">True</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i</span> = Item.objects.get(pk=1)
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.escolha_set.all</span>()
+<span class="op">&lt;</span><span class="ex">QuerySet</span> []<span class="op">&gt;</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">i.escolha_set.create</span>(escolha_text=<span class="st">'Não tem'</span>, boolean=0)
+<span class="op">&lt;</span><span class="ex">Escolha</span>: Não tem<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.escolha_set.create</span>(escolha_text=<span class="st">'Tem item'</span>, boolean=1)
+<span class="op">&lt;</span><span class="ex">Escolha</span>: Tem item<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.escolha_set.all</span>()
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Escolha: Não tem<span class="op">&gt;</span>, <span class="op">&lt;</span>Escolha: Tem item<span class="op">&gt;</span>]<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">i.escolha_set.count</span>()
+<span class="ex">2</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="ex">Escolha.objects.filter</span>(item__pub_date__year=current_year)
+<span class="op">&lt;</span><span class="ex">QuerySet</span> [<span class="op">&lt;</span>Escolha: Não tem<span class="op">&gt;</span>, <span class="op">&lt;</span>Escolha: Tem item<span class="op">&gt;</span>]<span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">d</span> = i.escolha_set.filter(escolha_text__startswith=<span class="st">'Tem'</span>)
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">d.delete</span>()</code></pre></div>
 </section></section>
-<section><section id="postgresqlmysql" class="titleslide slide level1"><h1>POSTGRESQL/MYSQL</h1></section></section>
-<section><section id="django-mysqlpostgresql" class="titleslide slide level1"><h1>DJANGO (MYSQL/POSTGRESQL)</h1></section></section>
-<section><section id="webservices" class="titleslide slide level1"><h1>WEBSERVICES</h1></section></section>
+<section><section id="create-superuser" class="titleslide slide level1"><h1>CREATE SUPERUSER</h1></section><section id="runserver-1" class="slide level2">
+<h2>RUNSERVER</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> manage.py runserver</code></pre></div>
+<p>Link: http://127.0.0.1:8000/admin</p>
+</section></section>
     </div>
   </div>
 
