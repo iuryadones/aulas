@@ -7,7 +7,7 @@ date: 03/10/2017
 
 ## Plano de Ensino
 
- - 8 encontros de 3h
+ - 8 encontros de 3 h
  - Carga horária total de 24 h
  - Planejado para 4 semanas
 
@@ -16,23 +16,34 @@ date: 03/10/2017
 ## 1º Aula
 
  - Python Básico
- - Tipos básicos, arquivos, estruturas de controle e módulos padrões.
- - Funções, módulos e pacotes e python funcional.
+ - Tipos Básicos
+ - Constantes Internas
+ - Funções Internas
+ - Escrita e Leitura de arquivo
+ - Estruturas de Controle
 
 ---
 
 ## 2º Aula
 
- - Python Avançado
- - Programação Orientada a Objetos
- - Bibliotecas de terceiros
- - Comunidade Python
+ - Funções
+ - Python Funcional
+ - Criar Módulos e Pacotes
 
 ---
 
 ## 3º Aula
 
+ - Comunidade Python
  - Preparação do Ambiente
+ - Bibliotecas de Terceiros
+ - Programação Orientada a Objetos
+ - Python Avançado
+
+---
+
+## 4º Aula
+
  - Introdução ao Django
  - Postgresql/mysql
  - Django (mysql/postgresql)
@@ -40,7 +51,7 @@ date: 03/10/2017
 
 ---
 
-## 4º Aula
+## 5º Aula
 
  - Modelo de Dados (Models)
  - Mapeamento das URLs e Views
@@ -49,7 +60,7 @@ date: 03/10/2017
 
 ---
 
-## 5º Aula
+## 6º Aula
 
  - Formulários (Forms)
  - Testes Unitários (nose)
@@ -57,11 +68,6 @@ date: 03/10/2017
  - Model Forms
  - Herança de modelos
  - Class-based Views
-
----
-
-## 6º Aula
-
  - Interface Administrativa (Django Admin)
  - Comandos Administrativos (manage.py)
 
