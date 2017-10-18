@@ -1,5 +1,5 @@
 ---
-author: Prof. Iury Adones
+author: Iury Xavier
 title: PYTHON DJANGO 
 ---
 
@@ -462,6 +462,8 @@ True
 
 # CREATE SUPERUSER
 
+## USER ADMIN
+
 ```python
 $ python manage.py createsuperuser
 Username: admin
@@ -479,7 +481,6 @@ $ python manage.py runserver
 
 Link: http://127.0.0.1:8000/admin
 
-
 ## ADMIN
 
 `core/admin.py`
@@ -491,3 +492,4 @@ from .models import Item
 
 admin.site.register(Item)
 ```
+
