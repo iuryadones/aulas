@@ -1,11 +1,11 @@
 ---
-author: Iury Xavier
 title: PYTHON DJANGO 
+author: Iury Xavier
 ---
 
 # INTRODUÇÃO AO DJANGO
 
-## INSTALL DJANGO
+## INSTALL DJANGO 
 
 ```bash
 $ python --version
@@ -479,7 +479,9 @@ Superuser created successfully.
 $ python manage.py runserver
 ```
 
-Link: http://127.0.0.1:8000/admin
+---
+
+Link: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ## ADMIN
 
@@ -492,4 +494,8 @@ from .models import Item
 
 admin.site.register(Item)
 ```
+
+---
+
+Link: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
