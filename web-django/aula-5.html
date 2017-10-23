@@ -264,10 +264,63 @@ urlpatterns <span class="op">=</span> [
 {% endblock %}</code></pre></div>
 </section><section id="como-ficou-1" class="slide level2">
 <h2>COMO FICOU?</h2>
+</section><section id="details-item" class="slide level2">
+<h2>DETAILS ITEM</h2>
+<blockquote>
+<p>core/views.py</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> django.shortcuts <span class="im">import</span> render, get_object_or_404
+...</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">...
+<span class="kw">def</span> item_detail(request, pk):
+    item <span class="op">=</span> get_object_or_404(Item, pk<span class="op">=</span>pk)
+    <span class="cf">return</span> render(request, <span class="st">'core/item_detail.html'</span>, {<span class="st">'item'</span>: item})</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>templates/core/item_detail.html</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">{% extends 'core/base.html' %}
+
+{% block content %}
+    <span class="kw">&lt;h1&gt;</span>{{ item.item_text }}<span class="kw">&lt;/h1&gt;</span>
+    <span class="kw">&lt;p&gt;</span>{{ item.descricao_text|linebreaksbr }}<span class="kw">&lt;/p&gt;</span>
+{% endblock %}</code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>templates/core/index.html</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for item in itens %}
+        <span class="kw">&lt;div&gt;</span>
+            <span class="kw">&lt;h2&gt;</span>
+                <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;{% url 'item_detail' pk=item.pk %}&quot;</span><span class="kw">&gt;</span>
+                ...
+                <span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;/h2&gt;</span>
+            ...
+        <span class="kw">&lt;/div&gt;</span>
+    {% endfor %}
+{% endblock %}</code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> django.conf.urls <span class="im">import</span> url
+
+<span class="im">from</span> . <span class="im">import</span> views
+
+urlpatterns <span class="op">=</span> [
+    url(<span class="vs">r'^$'</span>, views.index, name<span class="op">=</span><span class="st">'index'</span>),
+    url(<span class="vs">r'^item/(?P&lt;pk&gt;[0-9]+)/$'</span>,
+        views.item_detail,
+        name<span class="op">=</span><span class="st">'item_detail'</span>),
+]</code></pre></div>
 </section></section>
 <section><section id="stox-homepage" class="titleslide slide level1"><h1>STOX HOMEPAGE</h1></section><section class="slide level2">
 
-<p>Entre em aulas/web-django/extra/shop-homepage/ veja o index.html em seu browser e depois copie os arquivos para templates/core/</p>
+<p>Entre em aulas/web-django/extra/shop-homepage/ veja o index.html em seu browser e depois em aulas/web-django/extra/shop-item/ e veja o index.html em seu browser e depois copie os arquivos para templates/core/</p>
 </section></section>
 <section><section id="reference" class="titleslide slide level1"><h1>Reference</h1></section><section class="slide level2">
 

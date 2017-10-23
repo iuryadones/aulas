@@ -235,12 +235,79 @@ $ cp index.html base.html
 
 ## COMO FICOU?
 
+## DETAILS ITEM
+
+> core/views.py 
+
+```python
+from django.shortcuts import render, get_object_or_404
+...
+```
+
+```python
+...
+def item_detail(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    return render(request, 'core/item_detail.html', {'item': item})
+```
+
+---
+
+> templates/core/item_detail.html
+
+```html
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>{{ item.item_text }}</h1>
+    <p>{{ item.descricao_text|linebreaksbr }}</p>
+{% endblock %}
+```
+
+---
+
+> templates/core/index.html
+
+```html
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for item in itens %}
+        <div>
+            <h2>
+                <a href="{% url 'item_detail' pk=item.pk %}">
+                ...
+                </a>
+            </h2>
+            ...
+        </div>
+    {% endfor %}
+{% endblock %}
+```
+
+---
+
+```python
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^item/(?P<pk>[0-9]+)/$',
+        views.item_detail,
+        name='item_detail'),
+]
+```
+
 # STOX HOMEPAGE
 
 ---
 
 Entre em aulas/web-django/extra/shop-homepage/
 veja o index.html em seu browser e depois
+em aulas/web-django/extra/shop-item/
+e veja o index.html em seu browser e depois
 copie os arquivos para templates/core/
 
 # Reference

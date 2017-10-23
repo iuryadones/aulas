@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Item
 
 
@@ -9,3 +9,6 @@ def index(request):
 
     return render(request, template, context)
 
+def item_detail(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    return render(request, 'core/item_detail.html', {'item': item})
