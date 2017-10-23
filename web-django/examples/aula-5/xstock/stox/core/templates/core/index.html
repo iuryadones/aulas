@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for item in itens %}
+    <div>
+        <h2><a href="">{{ item.item_text }}</a></h2>
+        <p>{{ item.descricao_text }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
