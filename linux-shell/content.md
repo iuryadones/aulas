@@ -26,26 +26,32 @@ date: 30/10/2017
 
 > Distribuição Manjaro-Architect (i686) 32 bits 
 
+> Distribuição Lubuntu (i686) 32 bits 
+
 ## Introdução
 
-* Sobre shell
+* Sobre Linux 
+* Sobre Shell
 * Diferentes tipos de Shell
 
 ## Shell
 
-* Comandos de Controlo e Acesso
-* Comandos de Comunicações
-* Comandos de Ajuda e Documentação
-* Comandos de Edição de Texto
+* Comandos de Informação de Estado
 * Comandos de Gestão de Arquivos e Diretórios
 * Comandos de Exibição ou Impressão de Arquivos
-* Comandos de Transferência de Arquivos
+* Comandos de Ajuda e Documentação
+* Comandos de Controlo e Acesso
+* Comandos de Comunicações
 * Comandos de Notícias ou Rede
-* Comandos de Controlo de Processos
-* Comandos de Informação de Estado
-* Comandos de Processamento de Texto
+* Comandos de Transferência de Arquivos
 
 # 2º Aula
+
+## Shell
+
+* Comandos de Edição de Texto
+* Comandos de Processamento de Texto
+* Comandos de Controlo de Processos
 
 ## Shell-Script
 
