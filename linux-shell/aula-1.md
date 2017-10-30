@@ -129,24 +129,24 @@ root@hostname user #
 
 ---
 
-O comando "cd" é usado para acessar e mudar de diretório corrente. Muito utilizado para a navegação entre as pastas.
+O comando `cd` é usado para acessar e mudar de diretório corrente. Muito utilizado para a navegação entre as pastas.
 
 ```bash
-cd
+$ cd
 ```
 
 ---
 
-Copia o arquivo, tal como o CTRL+C. Facilita muito para quem precisa abrir e fechar arquivos ou copiá-los para outra tela.
+Copia o arquivo, tal como o `CTRL+C`. Facilita muito para quem precisa abrir e fechar arquivos ou copiá-los para outra tela.
 
 ```bash
-cp
+$ cp
 ```
 
 ---
 
 Mostra arquivos que estão na pasta em que o usuário está naquele momento. 
-Há variações, como exemplo ls -l, que obtem informações mais detalhadas dos arquivos.
+Há variações, como exemplo `ls -l`, que obtem informações mais detalhadas dos arquivos.
 
 ```bash
 $ ls
@@ -186,7 +186,7 @@ $ rm
 
 ---
 
-Serve para remover diretórios vazios. Existe a variação rm: rm –r, da qual é possível remover diretório que não estejam vazios.
+Serve para remover diretórios vazios. Existe a variação `rm`: `rm –r`, da qual é possível remover diretório que não estejam vazios.
 
 ```bash
 $ rmdir
@@ -256,11 +256,14 @@ mkdirat (2)          - create a directory
 
 ---
 
-Localizar ficheiros.
+Localizar arquivos.
 
 ```bash
 $ find
 $ find . -name *.txt -print
+$ find . -name *.txt
+$ find . -type f
+$ find . -type d
 ```
 
 ---
@@ -300,7 +303,7 @@ Localizar a página de ajuda (man page), código fonte, ou ficheiros binários, 
 $ whereis find
 ```
 
-# Gestão de Ficheiros e Directorias
+# Gestão de Arquivos e Diretórios
 
 ---
 
@@ -308,142 +311,148 @@ Mudar de diretório
 
 ```bash
 $ cd
+$ cd pasta
+$ cd caminho/pasta
 $ cd ..
 $ cd /
+$ cd ~
 $ cd -
 ```
 
 ---
 
-Mudar a protecção de um ficheiro ou directoria, como por exemplo chmod 777, parecido com o attrib do MS-DOS
-
-```bash
-$ chmod
-```
-
----
-
-Mudar o dono ou grupo de um ficheiro ou directoria, vem de change owner
-
-```bash
-$ chown
-```
-
----
-
-Mudar o grupo de um ficheiro ou directoria
-
-```bash
-$ chgrp
-```
-
----
-
-Compara dois ficheiros
-
-```bash
-$ cmp
-```
-
----
-
-Selecciona ou rejeita linhas comuns a dois ficheiros seleccionados
-
-```bash
-$ comm
-```
-
----
-
-Copia ficheiros, como o copy do MS-DOS
-
-```bash
-$ cp
-```
-
----
-
-Encripta ou Desencripta ficheiros (apenas CCWF)
-
-```bash
-$ crypt
-```
-
----
-
-Compara o conteúdo de dois ficheiros ASCII
-
-```bash
-$ diff
-```
-
----
-
-Determina o tipo de ficheiro
-
-```bash
-$ file
-```
-
----
-
-Procura um ficheiro por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do ficheiro a.txt que contenham a palavra "ola"
-
-```bash
-$ grep
-```
-
----
-
-Comprime ou expande ficheiros
-
-```bash
-$ gzip
-```
-
----
-
-Cria um link a um ficheiro
-
-```bash
-$ ln
-```
-
----
-
-Lista o conteúdo de uma directoria, semelhante ao comando dir no MS-DOS
+Lista o conteúdo de uma diretório, semelhante ao comando dir no MS-DOS
 
 ```bash
 $ ls
+$ ls -l
+$ ls -lh
+$ ls -a
+$ ls -la
+$ ls -lah
+$ ls -1
+$ ls -1s
 ```
 
 ---
 
-Lista os ficheiros abertos, vem de list open files
+|type           | char | user | group | owner |
+|:-------------:|:----:|:----:|:-----:|:-----:|
+| file          | -    | rwx  | rwx   | rwx   |
+| directory     | d    | rwx  | rwx   | rwx   |
+| symbolic link | l    | rwx  | rwx   | rwx   |
+
+---
+
+Mudar a proteção de um arquivo ou diretório, como por exemplo `chmod 777`, parecido com o attrib do MS-DOS
 
 ```bash
-$ lsof
+$ chmod u=rwx,g=rx,o=r arquivo1.txt 
+$ chmod 777 arquivo2.txt
 ```
 
 ---
 
-Cria uma directoria, vem de make directory”
+* `4` stands for "read"
+* `2` stands for "write"
+* `1` stands for "execute"
+* `0` stands for "no permission"
+
+> `4 + 2 + 1 + 0 = 7` 
+
+> rwx
+
+---
+
+Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
 
 ```bash
-$ mkdir
+# chown owner:group projeto
+$ sudo chown owner:group projeto
 ```
 
 ---
 
-Move ou renomeia ficheiros ou directorias
+Mudar o grupo de um arquivo ou diretório
 
 ```bash
-$ mv
+# chgrp group arq.txt
+$ sudo chgrp group arq.txt
 ```
 
 ---
 
-Mostra-nos o caminho por inteiro da directoria em que nos encontramos em dado momento, ou seja a pathname
+Selecciona ou rejeita linhas comuns a dois arquivos seleccionados
+
+```bash
+$ comm arq1.txt arq2.txt
+```
+
+---
+
+Copia arquivos, como o copy do MS-DOS
+
+```bash
+$ cp arq1.txt caminho/
+```
+
+---
+
+Compara o conteúdo de dois arquivos ASCII
+
+```bash
+$ diff arquivo1.txt arquivo2.txt
+```
+
+---
+
+Determina o tipo
+
+```bash
+$ file arquivo.txt 
+$ file image.png
+```
+
+---
+
+Procura em um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo `cat a.txt | grep ola` irá mostrar-nos apenas as linhas do ficheiro a.txt que contenham a palavra "ola"
+
+```bash
+$ grep "trecho a procurar" arquivo.txt 
+$ grep "pesquisar" arquivo1.txt arquivo2.txt
+```
+
+---
+
+Cria um link, ou atalho conhecido no MS-DOS
+
+```bash
+$ ln arqv.txt arq 
+$ ln -s arqv.txt arq
+$ ln -s pasta pst  
+```
+
+---
+
+Cria um diretório, vem de make directory”
+
+```bash
+$ mkdir nome_dir 
+```
+
+---
+
+Move e ou renomeia arquivos ou diretórios
+
+```bash
+$ mv arqv.txt caminho/
+$ mv arqv.txt caminho/outro_nome.txt
+$ mv arqv.txt outro_nome.txt
+```
+
+---
+
+Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento.
 
 ```bash
 $ pwd
@@ -451,39 +460,35 @@ $ pwd
 
 ---
 
-Mostra-nos o uso do disco e os limites
+Apaga ficheiros, vem de remove, e é semelhante ao comando del no MS-DOS. 
 
 ```bash
-$ quota
+$ rm arq.txt  
+$ rm arq1.txt arq2.txt
+$ rm -r pasta
+```
+
+É preciso ter cuidado com o comando `rm *`, pois apaga tudo sem confirmação por defeito em alguns shells
+
+---
+
+Apaga directórios, vem de remove directory
+
+```bash
+$ rmdir dir_void
 ```
 
 ---
 
-Apaga ficheiros, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
+Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
 
 ```bash
-$ rm
+$ stat arquivo.txt 
 ```
 
 ---
 
-Apaga directorias, vem de remove directory
-
-```bash
-$ rmdir
-```
-
----
-
-Mostra o estado de um ficheiro, útil para saber por exemplo a hora e data do último acesso ao mesmo
-
-```bash
-$ stat
-```
-
----
-
-Faz um flush aos buffers do sistema de ficheiros, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
+Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
 
 ```bash
 $ sync
@@ -491,7 +496,7 @@ $ sync
 
 ---
 
-Ordena, une ou compara texto, podendo ser usado para extrair informações dos ficheiros de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar ficheiros ordenados pelo nome
+Ordena, une ou compara texto, podendo ser usado para extrair informações dos ficheiros de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
 
 ```bash
 $ sort
@@ -499,10 +504,15 @@ $ sort
 
 ---
 
-Cria ou extrai arquivos, muito usado como programa de backup ou compressão de ficheiros
+Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
 
 ```bash
-$ tar
+$ tar -cf arq.tar ola_mundo.py
+$ tar -cf arq.tar meudir/
+```
+
+```bash
+$ tar -xvf arq.tar
 ```
 
 ---
@@ -523,7 +533,7 @@ $ tr
 
 ---
 
-Muda as protecções de ficheiros por defeito
+Muda as proteções dos arquivos por defeito
 
 ```bash
 $ umask
@@ -531,15 +541,7 @@ $ umask
 
 ---
 
-Restaura um ficheiro comprimido
-
-```bash
-$ uncompress
-```
-
----
-
-Reporta ou apaga linhas repetidas num ficheiro
+Reporta ou apaga linhas repetidas num arquivo 
 
 ```bash
 $ uniq
@@ -547,7 +549,7 @@ $ uniq
 
 ---
 
-Conta linhas, palavras e mesmo caracteres num ficheiro
+Conta linhas, palavras e mesmo caracteres num arquivo 
 
 ```bash
 $ wc

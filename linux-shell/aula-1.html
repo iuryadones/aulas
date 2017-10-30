@@ -255,15 +255,15 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 <h2>Comandos Úteis</h2>
 </section><section class="slide level2">
 
-<p>O comando “cd” é usado para acessar e mudar de diretório corrente. Muito utilizado para a navegação entre as pastas.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span></code></pre></div>
+<p>O comando <code>cd</code> é usado para acessar e mudar de diretório corrente. Muito utilizado para a navegação entre as pastas.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Copia o arquivo, tal como o CTRL+C. Facilita muito para quem precisa abrir e fechar arquivos ou copiá-los para outra tela.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cp</span></code></pre></div>
+<p>Copia o arquivo, tal como o <code>CTRL+C</code>. Facilita muito para quem precisa abrir e fechar arquivos ou copiá-los para outra tela.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">cp</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Mostra arquivos que estão na pasta em que o usuário está naquele momento. Há variações, como exemplo ls -l, que obtem informações mais detalhadas dos arquivos.</p>
+<p>Mostra arquivos que estão na pasta em que o usuário está naquele momento. Há variações, como exemplo <code>ls -l</code>, que obtem informações mais detalhadas dos arquivos.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span></code></pre></div>
 </section><section class="slide level2">
 
@@ -283,7 +283,7 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rm</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Serve para remover diretórios vazios. Existe a variação rm: rm –r, da qual é possível remover diretório que não estejam vazios.</p>
+<p>Serve para remover diretórios vazios. Existe a variação <code>rm</code>: <code>rm –r</code>, da qual é possível remover diretório que não estejam vazios.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rmdir</span></code></pre></div>
 </section><section class="slide level2">
 
@@ -323,9 +323,12 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 <span class="ex">mkdirat</span> (2)          <span class="ex">-</span> create a directory</code></pre></div>
 </section><section class="slide level2">
 
-<p>Localizar ficheiros.</p>
+<p>Localizar arquivos.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">find</span>
-$ <span class="fu">find</span> . -name *.txt -print</code></pre></div>
+$ <span class="fu">find</span> . -name *.txt -print
+$ <span class="fu">find</span> . -name *.txt
+$ <span class="fu">find</span> . -type f
+$ <span class="fu">find</span> . -type d</code></pre></div>
 </section><section class="slide level2">
 
 <p>Lança o explorador de informações.</p>
@@ -345,109 +348,163 @@ $ <span class="fu">find</span> . -name *.txt -print</code></pre></div>
 <p>Localizar a página de ajuda (man page), código fonte, ou ficheiros binários, de um determinado programa.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">whereis</span> find</code></pre></div>
 </section></section>
-<section><section id="gestão-de-ficheiros-e-directorias" class="titleslide slide level1"><h1>Gestão de Ficheiros e Directorias</h1></section><section class="slide level2">
+<section><section id="gestão-de-arquivos-e-diretórios" class="titleslide slide level1"><h1>Gestão de Arquivos e Diretórios</h1></section><section class="slide level2">
 
 <p>Mudar de diretório</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span>
+$ <span class="bu">cd</span> pasta
+$ <span class="bu">cd</span> caminho/pasta
 $ <span class="bu">cd</span> ..
 $ <span class="bu">cd</span> /
+$ <span class="bu">cd</span> ~
 $ <span class="bu">cd</span> -</code></pre></div>
 </section><section class="slide level2">
 
-<p>Mudar a protecção de um ficheiro ou directoria, como por exemplo chmod 777, parecido com o attrib do MS-DOS</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span></code></pre></div>
+<p>Lista o conteúdo de uma diretório, semelhante ao comando dir no MS-DOS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span>
+$ <span class="fu">ls</span> -l
+$ <span class="fu">ls</span> -lh
+$ <span class="fu">ls</span> -a
+$ <span class="fu">ls</span> -la
+$ <span class="fu">ls</span> -lah
+$ <span class="fu">ls</span> -1
+$ <span class="fu">ls</span> -1s</code></pre></div>
 </section><section class="slide level2">
 
-<p>Mudar o dono ou grupo de um ficheiro ou directoria, vem de change owner</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chown</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">type</th>
+<th style="text-align: center;">char</th>
+<th style="text-align: center;">user</th>
+<th style="text-align: center;">group</th>
+<th style="text-align: center;">owner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">file</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">directory</td>
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">symbolic link</td>
+<td style="text-align: center;">l</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">rwx</td>
+</tr>
+</tbody>
+</table>
 </section><section class="slide level2">
 
-<p>Mudar o grupo de um ficheiro ou directoria</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chgrp</span></code></pre></div>
+<p>Mudar a proteção de um arquivo ou diretório, como por exemplo <code>chmod 777</code>, parecido com o attrib do MS-DOS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> u=rwx,g=rx,o=r arquivo1.txt 
+$ <span class="fu">chmod</span> 777 arquivo2.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Compara dois ficheiros</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">cmp</span></code></pre></div>
+<ul>
+<li><code>4</code> stands for “read”</li>
+<li><code>2</code> stands for “write”</li>
+<li><code>1</code> stands for “execute”</li>
+<li><code>0</code> stands for “no permission”</li>
+</ul>
+<blockquote>
+<p><code>4 + 2 + 1 + 0 = 7</code></p>
+</blockquote>
+<blockquote>
+<p>rwx</p>
+</blockquote>
 </section><section class="slide level2">
 
-<p>Selecciona ou rejeita linhas comuns a dois ficheiros seleccionados</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">comm</span></code></pre></div>
+<p>Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># chown owner:group projeto</span>
+$ <span class="fu">sudo</span> chown owner:group projeto</code></pre></div>
 </section><section class="slide level2">
 
-<p>Copia ficheiros, como o copy do MS-DOS</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">cp</span></code></pre></div>
+<p>Mudar o grupo de um arquivo ou diretório</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># chgrp group arq.txt</span>
+$ <span class="fu">sudo</span> chgrp group arq.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Encripta ou Desencripta ficheiros (apenas CCWF)</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">crypt</span></code></pre></div>
+<p>Selecciona ou rejeita linhas comuns a dois arquivos seleccionados</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">comm</span> arq1.txt arq2.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Compara o conteúdo de dois ficheiros ASCII</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">diff</span></code></pre></div>
+<p>Copia arquivos, como o copy do MS-DOS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">cp</span> arq1.txt caminho/</code></pre></div>
 </section><section class="slide level2">
 
-<p>Determina o tipo de ficheiro</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">file</span></code></pre></div>
+<p>Compara o conteúdo de dois arquivos ASCII</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">diff</span> arquivo1.txt arquivo2.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Procura um ficheiro por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do ficheiro a.txt que contenham a palavra “ola”</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">grep</span></code></pre></div>
+<p>Determina o tipo</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">file</span> arquivo.txt 
+$ <span class="fu">file</span> image.png</code></pre></div>
 </section><section class="slide level2">
 
-<p>Comprime ou expande ficheiros</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">gzip</span></code></pre></div>
+<p>Procura em um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo <code>cat a.txt | grep ola</code> irá mostrar-nos apenas as linhas do ficheiro a.txt que contenham a palavra “ola”</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">grep</span> <span class="st">&quot;trecho a procurar&quot;</span> arquivo.txt 
+$ <span class="fu">grep</span> <span class="st">&quot;pesquisar&quot;</span> arquivo1.txt arquivo2.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Cria um link a um ficheiro</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ln</span></code></pre></div>
+<p>Cria um link, ou atalho conhecido no MS-DOS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ln</span> arqv.txt arq 
+$ <span class="fu">ln</span> -s arqv.txt arq
+$ <span class="fu">ln</span> -s pasta pst  </code></pre></div>
 </section><section class="slide level2">
 
-<p>Lista o conteúdo de uma directoria, semelhante ao comando dir no MS-DOS</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span></code></pre></div>
+<p>Cria um diretório, vem de make directory”</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> nome_dir </code></pre></div>
 </section><section class="slide level2">
 
-<p>Lista os ficheiros abertos, vem de list open files</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">lsof</span></code></pre></div>
+<p>Move e ou renomeia arquivos ou diretórios</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mv</span> arqv.txt caminho/
+$ <span class="fu">mv</span> arqv.txt caminho/outro_nome.txt
+$ <span class="fu">mv</span> arqv.txt outro_nome.txt</code></pre></div>
 </section><section class="slide level2">
 
-<p>Cria uma directoria, vem de make directory”</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span></code></pre></div>
-</section><section class="slide level2">
-
-<p>Move ou renomeia ficheiros ou directorias</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mv</span></code></pre></div>
-</section><section class="slide level2">
-
-<p>Mostra-nos o caminho por inteiro da directoria em que nos encontramos em dado momento, ou seja a pathname</p>
+<p>Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">pwd</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Mostra-nos o uso do disco e os limites</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">quota</span></code></pre></div>
+<p>Apaga ficheiros, vem de remove, e é semelhante ao comando del no MS-DOS.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rm</span> arq.txt  
+$ <span class="fu">rm</span> arq1.txt arq2.txt
+$ <span class="fu">rm</span> -r pasta</code></pre></div>
+<p>É preciso ter cuidado com o comando <code>rm *</code>, pois apaga tudo sem confirmação por defeito em alguns shells</p>
 </section><section class="slide level2">
 
-<p>Apaga ficheiros, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rm</span></code></pre></div>
+<p>Apaga directórios, vem de remove directory</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rmdir</span> dir_void</code></pre></div>
 </section><section class="slide level2">
 
-<p>Apaga directorias, vem de remove directory</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rmdir</span></code></pre></div>
+<p>Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">stat</span> arquivo.txt </code></pre></div>
 </section><section class="slide level2">
 
-<p>Mostra o estado de um ficheiro, útil para saber por exemplo a hora e data do último acesso ao mesmo</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">stat</span></code></pre></div>
-</section><section class="slide level2">
-
-<p>Faz um flush aos buffers do sistema de ficheiros, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco</p>
+<p>Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sync</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Ordena, une ou compara texto, podendo ser usado para extrair informações dos ficheiros de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar ficheiros ordenados pelo nome</p>
+<p>Ordena, une ou compara texto, podendo ser usado para extrair informações dos ficheiros de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sort</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Cria ou extrai arquivos, muito usado como programa de backup ou compressão de ficheiros</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tar</span></code></pre></div>
+<p>Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tar</span> -cf arq.tar ola_mundo.py
+$ <span class="fu">tar</span> -cf arq.tar meudir/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tar</span> -xvf arq.tar</code></pre></div>
 </section><section class="slide level2">
 
 <p>Copia o input para um standard output e outros ficheiros</p>
@@ -458,19 +515,15 @@ $ <span class="bu">cd</span> -</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tr</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Muda as protecções de ficheiros por defeito</p>
+<p>Muda as proteções dos arquivos por defeito</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">umask</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Restaura um ficheiro comprimido</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">uncompress</span></code></pre></div>
-</section><section class="slide level2">
-
-<p>Reporta ou apaga linhas repetidas num ficheiro</p>
+<p>Reporta ou apaga linhas repetidas num arquivo</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">uniq</span></code></pre></div>
 </section><section class="slide level2">
 
-<p>Conta linhas, palavras e mesmo caracteres num ficheiro</p>
+<p>Conta linhas, palavras e mesmo caracteres num arquivo</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">wc</span></code></pre></div>
 </section></section>
 <section><section id="exibição-ou-impressão-de-ficheiros" class="titleslide slide level1"><h1>Exibição ou Impressão de Ficheiros</h1></section><section class="slide level2">
