@@ -986,6 +986,23 @@ Editor de texto full-screen
 $ vi test.sh
 ```
 
+---
+
+```
+    ^
+    k
+< h   l >
+    j
+    v
+```
+
+---
+
+* `i` modo insert
+* `Esc` ou `Ctrl+[` modo normal
+* `x` Apaga um caracter 
+* `r` Substitui caracter 
+
 # MS-DOS vs LINUX/UNIX 
 
 ---
