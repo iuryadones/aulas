@@ -924,6 +924,403 @@ $ <span class="bu">echo</span> <span class="st">&quot;palavra1 palavra2 palavra3
 </tbody>
 </table>
 </section></section>
+<section><section id="shell-script" class="titleslide slide level1"><h1>Shell Script</h1></section><section id="primeiro-script" class="slide level2">
+<h2>Primeiro Script</h2>
+</section><section class="slide level2">
+
+<p>Crie o arquivo <code>ola.sh</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="bu">echo</span> <span class="st">&quot;olá </span><span class="va">$USER</span><span class="st">&quot;</span>
+<span class="bu">pwd</span>
+<span class="fu">date</span></code></pre></div>
+<p>Use <code>vi</code> ou <code>nano</code></p>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">cat</span> ola.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">ola.sh</span>
+<span class="ex">bash</span>: command not found: ola.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">./ola.sh</span> 
+<span class="ex">bash</span>: permission denied: ./ola.sh </code></pre></div>
+</section><section class="slide level2">
+
+<p>Sem atribuição de execução</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span> -l
+<span class="ex">-rw-r--r--</span> 1 user users       0 Nov  1 16:13 ola.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Atribui permissão de execução</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> +x ola.sh</code></pre></div>
+<p>ou</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> 744 ola.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Verifica atribuição</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span> -l
+<span class="ex">-rwxr--r--</span> 1 user users       0 Nov  1 16:13 ola.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Execute</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">./ola.sh</span></code></pre></div>
+</section><section class="slide level2">
+
+<p>Remove atribuição da permissão de execução</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> -x ola.sh</code></pre></div>
+<p>ou</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> 644 ola.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Execute</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">ls</span> -l
+$ <span class="bu">source</span> ola.sh</code></pre></div>
+</section><section id="variáveis" class="slide level2">
+<h2>Variáveis</h2>
+</section><section class="slide level2">
+
+<blockquote>
+<p><code>&lt;nome_variável&gt;=&lt;valor&gt;</code></p>
+</blockquote>
+<ul>
+<li>Não são permitidos espaços antes nem depois do carácter <code>=</code></li>
+<li>Apenas caracteres alfanuméricos podem ser utilizados como identificadores válidos de variáveis.</li>
+</ul>
+</section><section class="slide level2">
+
+<p>Os valores do tipo string que contenham espaços devem ser especificados entre aspas como no exemplo em baixo.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="va">var1=</span>123
+<span class="va">var2=</span>Ola
+<span class="va">var_ia_vel=</span><span class="st">&quot;Ola Mundo&quot;</span></code></pre></div>
+</section><section class="slide level2">
+
+<p>Variáveis de ambiente</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="bu">echo</span> <span class="va">$USER</span> <span class="va">$HOME</span>
+<span class="bu">echo</span> <span class="va">$PATH</span></code></pre></div>
+<p>Ver todas as variáveis do ambiente com o comando <code>env</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">source</span> var_ambiente.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Variáveis locais</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="va">ola=</span><span class="st">&quot;bom dia&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$ola</span><span class="st"> Paulo&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$olaPaulo</span><span class="st">&quot;</span> <span class="co">#Texto Pegado a variavel .. não funcione..</span>
+<span class="bu">echo</span> <span class="st">&quot;</span><span class="va">${ola}</span><span class="st">Paulo&quot;</span> <span class="co">#proteger a variável com as chavetas..ok</span>
+<span class="va">mesg=</span><span class="st">&quot;</span><span class="va">$ola</span><span class="st"> </span><span class="va">$USER</span><span class="st">&quot;</span>
+<span class="bu">echo</span> <span class="va">$mesg</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">source</span> var_local.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Input usando <code>read</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="bu">echo</span> <span class="st">&quot;Digite qualquer coisa&quot;</span>
+<span class="bu">read</span> <span class="va">var</span>
+<span class="bu">echo</span> <span class="st">&quot;Digitou </span><span class="va">$var</span><span class="st">&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">source</span> use_input.sh</code></pre></div>
+</section><section class="slide level2">
+
+<p>Variáveis especiais</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="bu">echo</span> <span class="st">&quot;Numero de Arguments para este script </span><span class="va">$#</span><span class="st">&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;Todos os argumentos para este script </span><span class="va">$*</span><span class="st">&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;O primeiro </span><span class="va">$1</span><span class="st"> e segundo </span><span class="va">$2</span><span class="st"> argumentos para este script&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;O nome deste ficheiro </span><span class="va">$0</span><span class="st">&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;O Processo ID deste script </span><span class="va">$$</span><span class="st">&quot;</span>
+<span class="bu">echo</span> <span class="st">&quot;Exit status do comando anterior </span><span class="va">$?</span><span class="st">&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">source</span> var_especiais.sh VAR1 VAR2 VAR3 VAR4</code></pre></div>
+</section><section id="subcomandos" class="slide level2">
+<h2>Subcomandos</h2>
+</section><section class="slide level2">
+
+<p>Esta facilidade do Bash Shell permite atribuir o output dum comando a uma variável. Isto é feito usando acento à volta do comando pretendido .. `comando` ..</p>
+<p>Veja o exemplo seguinte</p>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">data=</span><span class="kw">`</span><span class="fu">date</span><span class="kw">`</span>
+<span class="bu">echo</span> <span class="va">$data</span>
+<span class="co">#um exemplo simples</span>
+<span class="co">#um exemplo misturando vários comandos e variáveis.</span>
+<span class="va">info=</span><span class="kw">`</span><span class="bu">echo</span> <span class="va">$HOME</span> <span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot; estamos no directorio &quot;</span><span class="kw">;</span> <span class="bu">pwd</span><span class="kw">`</span></code></pre></div>
+</section><section id="vectores-arrays" class="slide level2">
+<h2>Vectores (Arrays)</h2>
+</section><section class="slide level2">
+
+<p>O Bash Shell permite a utilização de variáveis do tipo Array, apenas com uma dimensão (Vector). Os elementos dum Array podem ser definidos usando a sintaxe <code>variable[índice]</code> - onde índice é um valor <strong>inteiro 0,1,2..etc</strong>.</p>
+<p>Para obter o valor de um elemento de um array utilize-se a <code>sinatxe${variable[xx]}</code>.</p>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">v[2]=</span>1
+<span class="va">v[3]=</span>ola
+<span class="va">v[4]=</span>12 <span class="co">#elementos dum array podem não ser consecutivas ou do mesmo tipo</span>
+
+<span class="va">v[7]=</span> <span class="st">&quot; ola mundo &quot;</span> <span class="co">#pode deixar buracos no array</span>
+<span class="bu">echo</span> <span class="va">${v[2]}</span>
+
+<span class="va">dias=(</span> domingo segunda terca quarta <span class="va">)</span> <span class="co">#declaração e inicialização dum array</span>
+<span class="va">indice=</span>0
+<span class="bu">echo</span> <span class="st">&quot; Hoje é </span><span class="va">${dias[indice]}</span><span class="st"> &quot;</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">files=(</span><span class="kw">`</span><span class="fu">ls</span><span class="kw">`</span><span class="va">)</span> <span class="co">#output do comando ls passado para um vector</span>
+<span class="bu">echo</span> <span class="va">${files[2]}</span>
+<span class="bu">echo</span> <span class="va">${#files[@]}</span> -- numero de elementos do array</code></pre></div>
+</section><section id="operadores" class="slide level2">
+<h2>Operadores</h2>
+</section><section id="aritméticos" class="slide level2">
+<h2>Aritméticos</h2>
+<ul>
+<li><code>+</code> Soma</li>
+<li><code>*</code> Multiplicação</li>
+<li><code>**</code> Exponencial</li>
+<li><code>-</code> Subtracção</li>
+<li><code>/</code> Divisão</li>
+<li><code>%</code> Módulo(Resto da Divisão)</li>
+</ul>
+</section><section class="slide level2">
+
+<p>Para avaliar uma expressão aritmética utiliza-se a função <code>let</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="va">x=</span>1
+<span class="bu">let</span> x=x*2+3
+<span class="bu">echo</span> <span class="st">&quot;x=</span><span class="va">$x</span><span class="st">&quot;</span>    #output5
+<span class="bu">let</span> x--
+<span class="bu">echo</span> <span class="st">&quot;x=</span><span class="va">$x</span><span class="st">&quot;</span>    #output4
+<span class="va">y=</span>2
+<span class="bu">let</span> x=x + 3**y
+<span class="bu">echo</span> <span class="st">&quot;x=</span><span class="va">$x</span><span class="st">&quot;</span>    #output 13</code></pre></div>
+</section><section id="lógicos" class="slide level2">
+<h2>Lógicos</h2>
+<ul>
+<li><code>&amp;&amp;</code> <strong>E</strong></li>
+<li><code>||</code> <strong>OU</strong></li>
+</ul>
+</section><section id="comparação-inteira" class="slide level2">
+<h2>Comparação inteira</h2>
+<ul>
+<li><code>-eq</code> Igual</li>
+<li><code>-ne</code> Diferente</li>
+<li><code>-gt</code> Maior que</li>
+<li><code>-ge</code> Maior ou igual a</li>
+<li><code>-lt</code> Menor que</li>
+<li><code>-le</code> Menor ou igual a</li>
+</ul>
+</section><section id="comparação-de-strings" class="slide level2">
+<h2>Comparação de strings</h2>
+<ul>
+<li><code>=</code> Igual</li>
+<li><code>!=</code> Diferente</li>
+<li><code>&lt;</code> Menor que</li>
+<li><code>&gt;</code> Maior que</li>
+<li><code>-z</code> String nula, ou seja, tamanho = 0</li>
+<li><code>-n</code> String não é nula</li>
+</ul>
+</section><section id="arquivos" class="slide level2">
+<h2>Arquivos</h2>
+<ul>
+<li><code>-e</code> Retorna verdade caso o arquivo exista</li>
+<li><code>-f</code> Retorna verdade se o arquivo é regular e não uma diretório</li>
+<li><code>-d</code> Retorna verdade caso se trate de uma diretório</li>
+</ul>
+</section><section id="estruturas-de-controlo-de-decisão" class="slide level2">
+<h2>Estruturas de Controlo de decisão</h2>
+</section><section id="sintaxe-do-comando-if" class="slide level2">
+<h2>Sintaxe do comando if</h2>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">if</span><span class="bu"> [</span> condição1<span class="bu"> ]</span>
+<span class="kw">then</span>
+    <span class="ex">comandos</span> no caso da condição1 ser verdadeira
+
+<span class="kw">elif</span><span class="bu"> [</span> condição2<span class="bu"> ]</span>
+<span class="kw">then</span>
+    <span class="ex">comandos</span> no caso da condição2 ser verdadeira
+
+<span class="kw">else</span>
+    <span class="ex">comandos</span> no caso de nenhuma das condições ser verdadeira
+<span class="kw">fi</span></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>Importante</strong></p>
+<p>Os espaços entre as palavras chaves são importantes <code>if_[_condição</code></p>
+</section><section id="sintaxe-do-comando-case" class="slide level2">
+<h2>Sintaxe do comando case</h2>
+</section><section class="slide level2">
+
+<p>Estrutura <code>case</code> é similar à estrutura <code>switch</code> da linguagem <strong>C</strong>.</p>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">case</span> valor_duma_variável<span class="kw"> in</span>
+constante 1<span class="kw">)</span> <span class="ex">comando1</span><span class="kw">;;</span>
+<span class="ex">constante</span> 2) <span class="ex">comando2</span><span class="kw">;;</span>
+<span class="ex">constante</span> 3) <span class="ex">comando3</span><span class="kw">;;</span>
+<span class="ex">*</span>)           <span class="ex">comando_default</span><span class="kw">;;</span>
+<span class="kw">esac</span></code></pre></div>
+</section><section id="estruturas-de-repetição" class="slide level2">
+<h2>Estruturas de Repetição</h2>
+<p>Existem os seguinte ciclos de repetição:</p>
+<ul>
+<li>ciclos <code>for</code></li>
+<li>ciclos <code>while</code></li>
+<li>ciclos <code>until</code></li>
+</ul>
+</section><section id="comando-for" class="slide level2">
+<h2>Comando <code>for</code></h2>
+<p>A sintaxe do comando for:</p>
+<ul>
+<li><code>for variável in Lista_de_Valores do ..done</code></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="kw">for</span> <span class="ex">X</span> in red green blue 11 21 23
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$X</span>
+<span class="kw">done</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="kw">for</span> <span class="ex">i</span> in *.c
+<span class="kw">do</span>
+    <span class="fu">cp</span> <span class="va">$i</span> ~/backup/
+<span class="kw">done</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="va">y=</span><span class="st">&quot;ola bom dia&quot;</span>
+
+<span class="kw">for</span> <span class="ex">i</span> in <span class="va">$y</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$y</span>
+<span class="kw">done</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="va">vec=(</span> <span class="kw">`</span><span class="fu">cat</span> valores.txt<span class="kw">`</span> <span class="va">)</span>
+
+<span class="va">sum=</span>0
+
+<span class="kw">for</span> <span class="ex">elemento</span> in <span class="st">&quot;</span><span class="va">${vec[@]}</span><span class="st">&quot;</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$elemento</span>
+    <span class="bu">let</span> sum=sum+elemento
+<span class="kw">done</span>
+
+<span class="bu">echo</span> <span class="st">&quot;soma = </span><span class="va">$sum</span><span class="st">&quot;</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="co">#script args.sh</span>
+
+<span class="va">num=</span>1
+
+<span class="kw">for</span> <span class="ex">x</span> in <span class="va">$*</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="st">&quot;Argumento </span><span class="va">$num</span><span class="st"> = </span><span class="va">$x</span><span class="st">&quot;</span>
+    <span class="bu">let</span> num++
+<span class="kw">done</span></code></pre></div>
+</section><section class="slide level2">
+
+<p>Executa <code>args.sh</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">./args.sh</span> 12 in ola
+<span class="ex">Argumento1</span> = 12
+<span class="ex">Argumento2</span> = in
+<span class="ex">Argumento3</span> = ola</code></pre></div>
+</section><section id="comando-while" class="slide level2">
+<h2>Comando <code>while</code></h2>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="co">#script contar ou not-quite-enquanto</span>
+
+<span class="va">cnt=</span>1
+
+<span class="kw">while</span><span class="bu"> [</span> <span class="va">$cnt</span> –le 10<span class="bu"> ]</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="st">&quot;cnt </span><span class="va">$cnt</span><span class="st">&quot;</span>
+    <span class="bu">let</span> cnt++
+<span class="kw">done</span></code></pre></div>
+</section><section id="funcões" class="slide level2">
+<h2>Funcões</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="co">#script listar </span>
+
+<span class="fu">Listar()</span>
+<span class="kw">{</span>
+    <span class="bu">echo</span> <span class="st">&quot;Opcao 1 :listar ficheiros .c&quot;</span>
+    <span class="bu">echo</span> <span class="st">&quot;Opcao 2 :listar ficheiros .txt&quot;</span>
+    <span class="ex">readop</span>
+    <span class="bu">cd</span> ~/backup
+    <span class="kw">if</span><span class="bu"> [</span> op –eq 1<span class="bu"> ]</span>
+        <span class="fu">ls</span> –l *.c
+    <span class="kw">else</span>
+        <span class="fu">ls</span> –l *.txt
+    <span class="kw">fi</span>
+<span class="kw">}</span></code></pre></div>
+<p>Continuação próximo slide</p>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">Main_Menu()</span>
+<span class="kw">{</span>
+    <span class="va">opcao=</span>1
+    <span class="kw">while</span><span class="bu"> [</span> <span class="va">$opcao</span> <span class="ot">-ne</span> 0<span class="bu"> ]</span>
+    <span class="kw">do</span>
+        <span class="bu">echo</span> <span class="st">&quot;1. Backup dos ficheiros&quot;</span>
+        <span class="bu">echo</span> <span class="st">&quot;2. Listagem da pasta ~/backup&quot;</span>
+        <span class="bu">echo</span> <span class="st">&quot;0. Sair&quot;</span>
+        <span class="bu">echo</span>
+        <span class="bu">echo</span> -n <span class="st">&quot;Introduza a sua escolha &quot;</span>
+        <span class="bu">read</span> <span class="va">opcao</span>
+        <span class="kw">case</span> <span class="va">$opcao</span><span class="kw"> in</span>
+            1<span class="kw">)</span> <span class="ex">Backup</span> <span class="kw">;;</span>
+            <span class="ex">2</span>) <span class="ex">Listar</span> <span class="kw">;;</span>
+            <span class="ex">0</span>) <span class="bu">exit</span> <span class="kw">;;</span>
+            <span class="ex">*</span>) <span class="st">&quot;Opcao desconhecida&quot;</span>
+        <span class="kw">esac</span>
+    <span class="kw">done</span>
+<span class="kw">}</span>
+
+<span class="fu">date</span>
+<span class="ex">Main_Menu</span></code></pre></div>
+</section><section id="cálculos-numéricos" class="slide level2">
+<h2>Cálculos Numéricos</h2>
+</section><section id="inteiros" class="slide level2">
+<h2>INTEIROS</h2>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">$expr</span> <span class="ex">1</span> + 3
+<span class="ex">4</span>
+$ <span class="fu">expr</span> 10 / 2
+<span class="ex">5</span>
+$ <span class="bu">let</span> x=3*5
+$ <span class="bu">echo</span> <span class="va">$x</span>
+<span class="ex">15</span>
+$ <span class="bu">let</span> x=15/3+2
+$ <span class="bu">echo</span> <span class="va">$x</span>
+<span class="ex">7</span></code></pre></div>
+</section><section id="reais" class="slide level2">
+<h2>REAIS</h2>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">y=</span>2.2
+<span class="va">x=</span>2.7
+<span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$x</span><span class="st">/</span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">|</span> <span class="fu">bc</span> -l
+<span class="ex">1.22727272727272727272</span></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">x=</span>2.2
+<span class="va">y=</span>3.3
+<span class="bu">echo</span> <span class="va">$x</span> <span class="va">$y</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1+$2}'</span></code></pre></div>
+</section></section>
     </div>
   </div>
 

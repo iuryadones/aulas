@@ -20,6 +20,7 @@ date: 30/10/2017
 
 # Conteúdos
 
+
 # 1º Aula
 
 ## Instalação do linux
@@ -28,11 +29,13 @@ date: 30/10/2017
 
 > Distribuição Lubuntu (i686) 32 bits 
 
+
 ## Introdução
 
 * Sobre Linux 
 * Sobre Shell
 * Diferentes tipos de Shell
+
 
 ## Shell
 
@@ -41,9 +44,6 @@ date: 30/10/2017
 * Comandos de Exibição ou Impressão de Arquivos
 * Comandos de Ajuda e Documentação
 * Comandos de Controlo e Acesso
-* Comandos de Comunicações
-* Comandos de Notícias ou Rede
-* Comandos de Transferência de Arquivos
 
 # 2º Aula
 
@@ -52,6 +52,16 @@ date: 30/10/2017
 * Comandos de Edição de Texto
 * Comandos de Processamento de Texto
 * Comandos de Controlo de Processos
+* Comandos de Comunicações
+* Comandos de Notícias ou Rede
+* Comandos de Transferência de Arquivos
+
+---
+
+* Uso de pipelines
+* Extensões e ou Plugins
+
+# 3º Aula
 
 ## Shell-Script
 
@@ -60,12 +70,5 @@ date: 30/10/2017
 * Construções Condicionais
 * Declaração de Funções
 * Expressões Aritméticas
-
-# 3º Aula
-
-## Shell
-
-* Uso de pipelines
 * automação com scripts
-* extensões ou plugins
 

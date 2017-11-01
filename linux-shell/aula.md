@@ -1042,3 +1042,548 @@ $ vi test.sh
 | tracert     | traceroute  |
 | type        | cat/less    |
 | win         | startx      |
+
+# Shell Script
+
+## Primeiro Script
+
+---
+
+Crie o arquivo `ola.sh`
+
+```bash
+#!/bin/bash
+
+echo "olá $USER"
+pwd
+date
+```
+
+Use `vi` ou `nano`
+
+---
+
+```bash
+$ cat ola.sh
+```
+
+```bash
+$ ola.sh
+bash: command not found: ola.sh
+```
+
+```bash
+$ ./ola.sh 
+bash: permission denied: ./ola.sh 
+```
+
+---
+
+Sem atribuição de execução
+
+```bash
+$ ls -l
+-rw-r--r-- 1 user users       0 Nov  1 16:13 ola.sh
+```
+
+---
+
+Atribui permissão de execução
+
+```bash
+$ chmod +x ola.sh
+```
+
+ou
+
+```bash
+$ chmod 744 ola.sh
+```
+
+---
+
+Verifica atribuição 
+
+```bash
+$ ls -l
+-rwxr--r-- 1 user users       0 Nov  1 16:13 ola.sh
+```
+
+---
+
+Execute
+
+```bash
+$ ./ola.sh
+```
+
+---
+
+Remove atribuição da permissão de execução
+
+```bash
+$ chmod -x ola.sh
+```
+
+ou
+
+```bash
+$ chmod 644 ola.sh
+```
+
+---
+
+Execute
+
+```bash
+$ ls -l
+$ source ola.sh
+```
+
+## Variáveis 
+
+---
+
+> `<nome_variável>=<valor>`
+
+* Não são permitidos espaços antes nem depois do carácter `=`
+* Apenas caracteres alfanuméricos podem ser utilizados como identificadores válidos de variáveis.
+
+---
+
+Os valores do tipo string que contenham espaços devem ser especificados entre aspas como no exemplo em baixo.
+
+```bash
+#!/bin/bash
+var1=123
+var2=Ola
+var_ia_vel="Ola Mundo"
+```
+
+---
+
+Variáveis de ambiente
+
+```bash
+#!/bin/bash
+
+echo $USER $HOME
+echo $PATH
+```
+
+Ver todas as variáveis do ambiente com o comando `env`
+
+```bash
+$ source var_ambiente.sh
+```
+
+---
+
+Variáveis locais
+
+```bash
+#!/bin/bash
+
+ola="bom dia"
+echo "$ola Paulo"
+echo "$olaPaulo" #Texto Pegado a variavel .. não funcione..
+echo "${ola}Paulo" #proteger a variável com as chavetas..ok
+mesg="$ola $USER"
+echo $mesg
+```
+
+```bash
+$ source var_local.sh
+```
+
+---
+
+Input usando `read`
+
+```bash
+#!/bin/bash
+
+echo "Digite qualquer coisa"
+read var
+echo "Digitou $var"
+```
+
+```bash
+$ source use_input.sh
+```
+
+---
+
+Variáveis especiais
+
+```bash
+#!/bin/bash
+
+echo "Numero de Arguments para este script $#"
+echo "Todos os argumentos para este script $*"
+echo "O primeiro $1 e segundo $2 argumentos para este script"
+echo "O nome deste ficheiro $0"
+echo "O Processo ID deste script $$"
+echo "Exit status do comando anterior $?"
+```
+
+```bash
+$ source var_especiais.sh VAR1 VAR2 VAR3 VAR4
+```
+
+## Subcomandos
+
+---
+
+Esta facilidade do Bash Shell permite atribuir o output dum comando a uma variável. Isto é feito usando acento à volta do comando pretendido .. \`comando\` .. 
+
+Veja o exemplo seguinte
+
+---
+
+```bash
+data=`date`
+echo $data
+#um exemplo simples
+#um exemplo misturando vários comandos e variáveis.
+info=`echo $HOME ; echo " estamos no directorio "; pwd`
+```
+
+## Vectores (Arrays)
+
+---
+
+O Bash Shell permite a utilização de variáveis do tipo Array, apenas com uma dimensão (Vector).
+Os elementos dum Array podem ser definidos usando a sintaxe `variable[índice]` - onde índice é
+um valor **inteiro 0,1,2..etc**.
+
+Para obter o valor de um elemento de um array utilize-se a `sinatxe${variable[xx]}`.
+
+---
+
+```bash
+v[2]=1
+v[3]=ola
+v[4]=12 #elementos dum array podem não ser consecutivas ou do mesmo tipo
+
+v[7]= " ola mundo " #pode deixar buracos no array
+echo ${v[2]}
+
+dias=( domingo segunda terca quarta ) #declaração e inicialização dum array
+indice=0
+echo " Hoje é ${dias[indice]} "
+```
+
+---
+
+```bash
+files=(`ls`) #output do comando ls passado para um vector
+echo ${files[2]}
+echo ${#files[@]} -- numero de elementos do array
+```
+
+## Operadores
+
+## Aritméticos
+
+* `+` Soma
+* `*` Multiplicação
+* `**` Exponencial
+* `-` Subtracção
+* `/` Divisão
+* `%` Módulo(Resto da Divisão)
+
+---
+
+Para avaliar uma expressão aritmética utiliza-se a função `let`
+
+```bash
+#!/bin/bash
+
+x=1
+let x=x*2+3
+echo "x=$x"    #output5
+let x--
+echo "x=$x"    #output4
+y=2
+let x=x + 3**y
+echo "x=$x"    #output 13
+```
+
+## Lógicos
+
+* `&&` **E**
+* `||` **OU**
+
+## Comparação inteira
+
+* `-eq` Igual
+* `-ne` Diferente
+* `-gt` Maior que
+* `-ge` Maior ou igual a
+* `-lt` Menor que
+* `-le` Menor ou igual a
+
+## Comparação de strings
+
+* `=` Igual
+* `!=` Diferente
+* `<` Menor que
+* `>` Maior que
+* `-z` String nula, ou seja, tamanho = 0
+* `-n` String não é nula
+
+## Arquivos
+
+* `-e` Retorna verdade caso o arquivo exista
+* `-f` Retorna verdade se o arquivo é regular e não uma diretório
+* `-d` Retorna verdade caso se trate de uma diretório
+
+## Estruturas de Controlo de decisão
+
+---
+
+## Sintaxe do comando if
+
+---
+
+```bash
+if [ condição1 ]
+then
+    comandos no caso da condição1 ser verdadeira
+
+elif [ condição2 ]
+then
+    comandos no caso da condição2 ser verdadeira
+
+else
+    comandos no caso de nenhuma das condições ser verdadeira
+fi
+```
+
+---
+
+**Importante** 
+
+Os espaços entre as palavras chaves são importantes `if_[_condição`
+
+## Sintaxe do comando case 
+
+---
+
+Estrutura `case` é similar à estrutura `switch` da linguagem **C**.
+
+---
+
+```bash
+case valor_duma_variável in
+constante 1) comando1;;
+constante 2) comando2;;
+constante 3) comando3;;
+*)           comando_default;;
+esac
+```
+
+## Estruturas de Repetição 
+
+Existem os seguinte ciclos de repetição:
+
+* ciclos `for`
+* ciclos `while`
+* ciclos `until`
+
+---
+
+## Comando `for`
+
+A sintaxe do comando for:
+
+* `for variável in Lista_de_Valores do ..done`
+
+---
+
+```bash
+#!/bin/bash
+
+for X in red green blue 11 21 23
+do
+    echo $X
+done
+```
+
+---
+
+```bash
+#!/bin/bash
+
+for i in *.c
+do
+    cp $i ~/backup/
+done
+```
+
+---
+
+```bash
+#!/bin/bash
+
+y="ola bom dia"
+
+for i in $y
+do
+    echo $y
+done
+```
+
+---
+
+```bash
+#!/bin/bash
+
+vec=( `cat valores.txt` )
+
+sum=0
+
+for elemento in "${vec[@]}"
+do
+    echo $elemento
+    let sum=sum+elemento
+done
+
+echo "soma = $sum"
+```
+
+---
+
+```bash
+#!/bin/bash
+#script args.sh
+
+num=1
+
+for x in $*
+do
+    echo "Argumento $num = $x"
+    let num++
+done
+```
+
+---
+
+Executa `args.sh`
+
+```bash
+$ ./args.sh 12 in ola
+Argumento1 = 12
+Argumento2 = in
+Argumento3 = ola
+```
+
+## Comando `while`
+
+---
+
+```bash
+#!/bin/bash
+#script contar ou not-quite-enquanto
+
+cnt=1
+
+while [ $cnt –le 10 ]
+do
+    echo "cnt $cnt"
+    let cnt++
+done
+```
+
+## Funcões 
+
+```bash
+#!/bin/bash
+#script listar 
+
+Listar()
+{
+    echo "Opcao 1 :listar ficheiros .c"
+    echo "Opcao 2 :listar ficheiros .txt"
+    readop
+    cd ~/backup
+    if [ op –eq 1 ]
+        ls –l *.c
+    else
+        ls –l *.txt
+    fi
+}
+```
+
+Continuação próximo slide 
+
+---
+
+```bash
+Main_Menu()
+{
+    opcao=1
+    while [ $opcao -ne 0 ]
+    do
+        echo "1. Backup dos ficheiros"
+        echo "2. Listagem da pasta ~/backup"
+        echo "0. Sair"
+        echo
+        echo -n "Introduza a sua escolha "
+        read opcao
+        case $opcao in
+            1) Backup ;;
+            2) Listar ;;
+            0) exit ;;
+            *) "Opcao desconhecida"
+        esac
+    done
+}
+
+date
+Main_Menu
+```
+
+
+## Cálculos Numéricos
+
+---
+
+## INTEIROS
+
+---
+
+```bash
+$expr 1 + 3
+4
+$ expr 10 / 2
+5
+$ let x=3*5
+$ echo $x
+15
+$ let x=15/3+2
+$ echo $x
+7
+```
+
+---
+
+## REAIS
+
+---
+
+```bash
+y=2.2
+x=2.7
+echo "$x/$y"| bc -l
+1.22727272727272727272
+```
+
+---
+
+```bash
+x=2.2
+y=3.3
+echo $x $y | awk '{print $1+$2}'
+```
