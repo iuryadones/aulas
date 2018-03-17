@@ -2,5 +2,8 @@
 
 ## Cursos
 
-* Web Django
+* C
+* C++
 * Linux Shell e Shell Script
+* Python3
+* Web Django
