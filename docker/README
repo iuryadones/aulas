@@ -108,7 +108,7 @@ primeiro mate o processo `docker run` com `Control + c`
 segundo execute o comando e mude o caminho de acordo com o seu PC
 
 ```
-docker run -p 80:80 -v /home/user/aulas/docker/examples/php\_app/dev-src/:/var/www/html app-php
+docker run -p 80:80 -v /home/user/aulas/docker/examples/php_app/dev-src/:/var/www/html app-php
 ```
 
 terceiro execute
