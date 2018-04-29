@@ -33,8 +33,60 @@ docker system prune -a
 
 # Docker examples hello-world
 
+Leia os arquivos de `examples/first_app`.
+
+Execute os seguintes comandos
+
+```
+cd examples/first_app
+```
+
+```
+docker build -t hello-world .
+```
+
+```
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM python:3
+3: Pulling from library/python
+############: Pull complete 
+.
+.
+.
+Digest: sha256:###...
+Status: Downloaded newer image for python:3
+ ---> ############
+Step 2/5 : RUN mkdir -p /usr/src/app
+ ---> Running in 118cccad6ee7
+Removing intermediate container 118cccad6ee7
+ ---> ############
+Step 3/5 : WORKDIR /usr/src/app
+Removing intermediate container ############
+ ---> ############
+Step 4/5 : COPY . .
+ ---> ############
+Step 5/5 : CMD [ "python", "./hello_world.py" ]
+ ---> Running in ############
+Removing intermediate container ############
+ ---> ############
+Successfully built ############
+Successfully tagged hello-world:latest
+```
+
+Execute o container
+
+```
+docker run hello-world 
+```
+
+Resposta da execução
+
+```
+Hello World
+```
 
 # Docker examples php server
+
 Leia os arquivos de `examples/php_app`.
 
 Execute os seguintes comandos
@@ -128,5 +180,5 @@ curl http://localhost
 
 agora tens como desenvolver sem ter que ficar matando e levantando máquina.
 
-# Docker example python
+# Docker compose example python
 
