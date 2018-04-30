@@ -279,3 +279,5 @@ services:
         depends_on:
             - product-service
 ```
+
+Entre no link [http://localhost:5000](http://localhost:5000)
