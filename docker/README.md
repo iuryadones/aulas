@@ -182,3 +182,36 @@ agora tens como desenvolver sem ter que ficar matando e levantando máquina.
 
 # Docker compose example python
 
+Leia os arquivos de `examples/micro_service`.
+
+Execute os seguintes comandos
+
+```
+cd examples/micro_service
+```
+
+`TODO: tree dir`
+
+Exite o product/Dockerfile, mas não precisamos usar o `docker build` e `docker run`.
+
+Execute o comando no `examples/micro_service`, temos neste diretório o arquivo
+`docker-compose.yml` que já têm as instruções do container.
+
+
+```
+docker-compose up
+```
+
+Entre no link [http://localhost:5001](http://localhost:5001)
+
+A exibição de um json
+
+```
+{
+    "product": [
+        "Ice cream",
+        "Chocolate",
+        "Fruit"
+    ]
+}
+```
