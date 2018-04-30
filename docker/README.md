@@ -215,3 +215,67 @@ A exibição de um json
     ]
 }
 ```
+
+agora criar um novo micro-service para o website usando php
+
+```bash
+mkdir examples/micro_service/website
+cd examples/micro_service/website
+```
+
+Crie um arquivo `index.php` dentro da pasta `website`.
+
+```bash
+touch index.php
+```
+
+copie o conteudo
+
+```php
+<html>
+    <head>
+        <title>Loja de Sweets</title>
+    </head>
+    <body>
+        <h1>Sejam bem vindos!</h1>
+        <ul>
+            <?php
+                $json = file_get_contents('http://product-service');
+                $obj = json_decode($json);
+
+                $products = $obj->products;
+                foreach ($products as $product) {
+                    echo "<li>$product</li>";
+                }
+            ?>
+        </ul>
+    </body>
+</html>
+```
+
+Modifique o arquivo `docker-compose.yml`:
+ - Add um novo serviço de website, primeiro temos a imagem do `php:apache`
+ - Add `volumes` de desenvolvimento
+ - Add `ports` do website
+ - Add `depends_on` do `product-service`
+
+```yaml
+version: '3'
+
+services:
+    product-service:
+        build: ./product
+        volumes:
+            - ./product:/usr/src/app
+        ports:
+            - 5001:80
+
+    website:
+        image: php:apache
+        volumes:
+            - ./website:/var/www/html
+        ports:
+            - 5000:80
+        depends_on:
+            - product-service
+```
