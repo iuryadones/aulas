@@ -281,3 +281,18 @@ services:
 ```
 
 Entre no link [http://localhost:5000](http://localhost:5000)
+
+podemos subir a máquina e deixar em background, assim podemos usar livremente o
+terminal.
+
+execute assim
+
+```bash
+docker-compose up -d
+```
+
+para derrubar as maquinas precisaremos executar a seguinte linha de comando
+
+```bash
+docker-compose down
+```
