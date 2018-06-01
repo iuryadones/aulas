@@ -6,4 +6,13 @@
 * C++
 * Linux Shell e Shell Script
 * Python3
-* Web Django
+ - advanced
+ - basics
+ - basics++
+ - examples
+ - laboratory
+ - physics
+ - testing
+ - web-django
+* Git
+* Docker
