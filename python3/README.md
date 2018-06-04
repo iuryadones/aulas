@@ -56,10 +56,10 @@ $ echo "ladc" > .python-version
 
 ```bash
 $ python -V
-Python 3.6.4
+Python 3.6.x
 ```
 
-Adicione também Python 2.7.14
+Adicione também Python 2.7.x
 
 ## Fontes
 
