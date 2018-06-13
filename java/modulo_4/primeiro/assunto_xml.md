@@ -112,9 +112,115 @@ arquivo: estante.xml
 </estante>
 ```
 
+#  Manipulando <b><i><span style="color:blue">XML</span></i></b> com Java
+
 ---
 
-#  Manipulando <b><i><span style="color:blue">XML</span></i></b> com Java
+## Atalho para criar classe em Java no Eclipse
+
+> `Ctrl` + `n` 
+
+---
+
+## Crie Classes
+  - Estante
+  - Livro
+
+> Use package br.com.username.xstream;
+
+---
+
+Arquivo: Estante.java
+
+```java
+package br.com.username.xstream;
+
+public class Estante {
+        private int id;
+        private String tipo;
+        private double tamanho;
+        private String livros;
+
+}
+```
+
+---
+
+Arquivo: Livro.java
+
+```java
+package br.com.username.xstream;
+
+public class Livro {
+        private int id;
+        private String titulo;
+        private String autor;
+        private int anoDeLancamento;
+        private double classificacao;
+
+}
+```
+
+---
+
+## Atalho de busca no Eclipse
+
+> `Ctrl` + `3` 
+
+---
+
+## Use o atalho de busca nos arquivos 
+  - Estante.java e Livro.java  
+  - Busque por "generate construtor using fields" 
+  - Selecione todos os atributos
+
+---
+
+```java
+package br.com.username.xstream;
+
+public class Livro {
+        ...
+        public Livro(int id,
+                       String titulo,
+                       String autor,
+                       int anoDeLancamento,
+                       double classificacao) {
+
+                this.id = id;
+                this.titulo = titulo;
+                this.autor = autor;
+                this.anoDeLancamento = anoDeLancamento;
+                this.classificacao = classificacao;
+        } 
+
+}
+```
+
+---
+
+```java
+package br.com.username.xstream;
+
+public class Estante {
+        ...
+        public Produto(int id,
+                       String tipo,
+                       double tamanho,
+                       String livros) {
+
+                this.id = id;
+                this.tipo = tipo;
+                this.tamanho = tamanho;
+                this.livros = livros;
+        } 
+
+}
+```
+
+---
+
+## Como converter um objeto em java para arquivos em xml?
 
 ---
 
@@ -128,158 +234,246 @@ arquivo: estante.xml
 
 ---
 
-<!-- ![test image size](java/modulo_4/primeiro/images/test.png) -->
+## Adicione os pacotes do xstream no projeto
 
-Ctrl + n criar uma classe
+> click com botão do mouse de propriedades no Projeto Java 
 
-
-```java
-package br.com.fuctura.xstream;
-
-public class Produto {
-	private String nome;
-	private double preco;
-	private String descricao;
-
-}
-```
+### Selecione
+  - "Build to Path"
+    - "Add External Archives"
 
 ---
 
-Ctrl + 3 -> buscar: generate construtor using fields
-
-```java
-package br.com.fuctura.xstream;
-
-public class Produto {
-	private String nome;
-	private double preco;
-	private String descricao;
-
-	public Produto(String nome, double preco, String descricao) {
-		this.nome = nome;
-		this.preco = preco;
-		this.descricao = descricao;
-	} 
-
-}
-```
+> <span style="color:yellow">Antes</span> de fazer <span style="color:green">valer</span>, melhor <span style="color:red">testar</span>!!!
 
 ---
 
-download: xstream.zip
-unzip xstream.zip
-
-
-packages:
-  - xpp3_min-\*.jar
-  - xstream-\*.jar
-
----
-
-project:
-  - build to path
-    - add arquivos externos
-
----
-
-create Source Folder
+### create Source Folder
   - name: test
     - create java class
-      - name: ProdutoTest
+      - name: EstanteTest
+      - name: LivroTest
 
 ---
 
-```java
-package br.com.fuctura.xstream;
+Arquivo: EstanteTest.java
 
-public class ProdutoTest {
+```java
+package br.com.username.xstream;
+
+public class EstanteTest {
 
 }
 ```
 
 ---
 
+Arquivo: LivroTest.java
+
 ```java
-package br.com.fuctura.xstream;
+package br.com.username.xstream;
 
-public class ProdutoTest {
-	
-	@Test
-	public void GerarXml() {
-		
-	}
-	
+public class LivroTest {
+
 }
-
-`Ctrl` + `1` -> na linha do `@Test` e add package JUnit4
 ```
+
 ---
 
+## Escreva o método test
+
 ```java
-package br.com.fuctura.xstream;
+package br.com.username.xstream;
+
+public class EstanteTest {
+        
+        @Test
+        public void GerarXml() {
+                
+        }
+        
+}
+```
+
+---
+
+## Escreva o método test
+
+```java
+package br.com.username.xstream;
+
+public class LivroTest {
+        
+        @Test
+        public void GerarXml() {
+                
+        }
+        
+}
+```
+
+---
+
+Na linha do <span style="color:blue">`@Test`</span> use o atalho para correção da linha
+
+> `Ctrl` + `1` 
+
+Add package JUnit4
+
+---
+
+Arquivo: EstanteTest.java
+
+```java
+package br.com.username.xstream;
 
 import org.junit.Test;
 
-public class ProdutoTest {
-	
-	@Test
-	public void GerarXml() {
-		
-	}
-	
+public class EstanteTest {
+        
+        @Test
+        public void GerarXml() {
+                
+        }
+        
 }
 ```
 
 ---
 
-```java
-package br.com.fuctura.xstream;
+Arquivo: LivroTest.java
 
-import static org.junit.Assert.assertEquals;
+```java
+package br.com.username.xstream;
 
 import org.junit.Test;
 
-import com.thoughtworks.xstream.XStream;
+public class LivroTest {
+        
+        @Test
+        public void GerarXml() {
+                
+        }
+        
+}
+```
 
-public class ProdutoTest {
-	
-	@Test
-	public void GerarXml() {
-		String xmlEsperado = "<produto>\n"+
-				"  <nome>geladeira</nome>\n"+
-				"  <preco>1000.0</preco>\n"+
-				"  <descricao>geladeira de duas portas</descricao>\n"+
-				"</produto>";
+---
 
-		Produto geladeira = new Produto("geladeira", 1000.0, "geladeira de duas portas");
+> Vamos fazer o teste da Estante
 
-		XStream xstream = new XStream();
-		xstream .alias("produto", Produto.class);
-		String xmlGerado = xstream.toXML(geladeira);
+---
 
-		assertEquals(xmlEsperado, xmlGerado);
-	}
-	
+Sabemos o formato xml esperado da estante
+
+```xml
+<estante>
+  <id>...</id>
+  <tipo>...</tipo>
+  <tamanho>...</tamanho>
+  <livros>...</livros>
+</estante>
+```
+
+---
+
+```java
+...
+public class EstanteTest {
+        
+        @Test
+        public void GerarXml() {
+                String xmlEsperado = "<estante>\n"+
+                                     "<id>1</id>\n"+
+                                     "<tipo>guarda livros</tipo>\n"+
+                                     "<tamanho>100.0</tamanho>\n"+
+                                     "<livros>1,2,3</livros>\n"+
+                                     "</estante>";
+
+                Estante armario = new Estante(1,
+                                              "guarda livros",
+                                              100.0,
+                                              "1,2,3");
+
+        }
+        
 }
 ```
 
 ---
 
 ```java
-package br.com.fuctura.xstream;
+...
+public class EstanteTest {
+        
+        @Test
+        public void GerarXml() {
+                ...
+                Estante armario = new Estante(1,
+                                              "guarda livros",
+                                              100.0,
+                                              "1,2,3");
 
-public class Produto {
-	private int codigo;
-	private String nome;
-	private double preco;
-	private String descricao;
+                XStream xstream = new XStream();
+                String xmlGerado = xstream.toXML(armario);
 
-	public Produto(int codigo, String nome, double preco, String descricao) {
-		this.codigo = codigo;
-		this.nome = nome;
-		this.preco = preco;
-		this.descricao = descricao;
-	} 
+                assertEquals(xmlEsperado, xmlGerado);
+        }
+        
 }
 ```
+
+---
+
+> Execute com Junit Test o Arquivo EstanteTest.java
+
+---
+
+> Vamos analisar
+
+---
+
+```java
+...
+public class EstanteTest {
+        
+        @Test
+        public void GerarXml() {
+                ...
+                Estante armario = new Estante(1,
+                                              "guarda livros",
+                                              100.0,
+                                              "1,2,3");
+
+                XStream xstream = new XStream();
+                xstream .alias("estante", Produto.class);
+                String xmlGerado = xstream.toXML(armario);
+
+                assertEquals(xmlEsperado, xmlGerado);
+        }
+        
+}
+```
+
+---
+
+Sabemos o formato xml esperado do livro
+
+```xml
+<livro>
+  <id>...</id>
+  <titulo>...</titulo>
+  <autor>...</autor>
+  <anoDeLancamento>...</anoDeLancamento>
+  <classificacao>...</classificacao>
+</livro>
+```
+
+---
+
+# Façam o teste para o Livro
+
+---
+
+> Então dúvidas?
+
