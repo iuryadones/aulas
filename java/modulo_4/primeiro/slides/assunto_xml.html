@@ -1648,9 +1648,26 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 <li>Concentração na estrutura da informação, e não na sua aparência</li>
 </ul>
 </section></section>
-<section><section id="exercícios" class="title-slide slide level1"><h1>Exercícios</h1></section><section class="slide level2">
+<section><section id="exercícios" class="title-slide slide level1"><h1>Exercícios</h1></section><section id="crie-projeto-java-nos-seguintes-passos" class="slide level2">
+<h2>Crie Projeto Java nos seguintes passos:</h2>
+<ul>
+<li>File
+<ul>
+<li>New
+<ul>
+<li>Java Project
+<ul>
+<li>Project name: xstream</li>
+<li>Use an execution environments JRE: JavaSE-1.8</li>
+<li>Create separate folders for sources and class file: True</li>
+<li>Click: finish</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
 
-<p>Construa arquivos em <b><i><span style="color:blue">XML</span></i></b> para uma <span style="color:orange">Estante</span> e <span style="color:red">Livro</span>.</p>
+<p>Construa arquivos no formato <b><i><span style="color:blue">XML</span></i></b> para os objetos <span style="color:orange">Estante</span> e <span style="color:red">Livro</span>, ambos dentro do Projeto Java.</p>
 </section><section class="slide level2">
 
 <p>Modelo do livro</p>
@@ -1702,6 +1719,27 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 </tr>
 </tbody>
 </table>
+</section><section class="slide level2">
+
+<p>arquivo: livro.xml</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">&lt;livro&gt;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">&lt;id&gt;</span>...<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw">&lt;titulo&gt;</span>...<span class="kw">&lt;/titulo&gt;</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="kw">&lt;autor&gt;</span>...<span class="kw">&lt;/autor&gt;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="kw">&lt;anoDeLancamento&gt;</span>...<span class="kw">&lt;/anoDeLancamento&gt;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="kw">&lt;classificacao&gt;</span>...<span class="kw">&lt;/classificacao&gt;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">&lt;/livro&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>arquivo: estante.xml</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">&lt;estante&gt;</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">&lt;id&gt;</span>...<span class="kw">&lt;/id&gt;</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="kw">&lt;tipo&gt;</span>...<span class="kw">&lt;/tipo&gt;</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="kw">&lt;tamanho&gt;</span>...<span class="kw">&lt;/tamanho&gt;</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="kw">&lt;livros&gt;</span>...<span class="kw">&lt;/livros&gt;</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">&lt;/estante&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
 </section></section>
 <section><section id="manipulando-xml-com-java" class="title-slide slide level1"><h1>Manipulando <b><i><span style="color:blue">XML</span></i></b> com Java</h1></section><section id="usaremos-o-xstream" class="slide level2">
 <h2>Usaremos o <a href="http://x-stream.github.io/download.html">xstream</a></h2>
@@ -1718,31 +1756,31 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 <!-- ![test image size](java/modulo_4/primeiro/images/test.png) -->
 <p>Ctrl + n criar uma classe</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">}</a></code></pre></div>
 </section><section class="slide level2">
 
 <p>Ctrl + 3 -&gt; buscar: generate construtor using fields</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="kw">public</span> <span class="fu">Produto</span>(<span class="bu">String</span> nome, <span class="dt">double</span> preco, <span class="bu">String</span> descricao) {</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">        <span class="kw">this</span>.<span class="fu">nome</span> = nome;</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">        <span class="kw">this</span>.<span class="fu">preco</span> = preco;</a>
-<a class="sourceLine" id="cb3-11" data-line-number="11">        <span class="kw">this</span>.<span class="fu">descricao</span> = descricao;</a>
-<a class="sourceLine" id="cb3-12" data-line-number="12">    } </a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="kw">public</span> <span class="fu">Produto</span>(<span class="bu">String</span> nome, <span class="dt">double</span> preco, <span class="bu">String</span> descricao) {</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">        <span class="kw">this</span>.<span class="fu">nome</span> = nome;</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">        <span class="kw">this</span>.<span class="fu">preco</span> = preco;</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">        <span class="kw">this</span>.<span class="fu">descricao</span> = descricao;</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">    } </a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">}</a></code></pre></div>
 </section><section class="slide level2">
 
 <p>download: xstream.zip unzip xstream.zip</p>
@@ -1755,86 +1793,86 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 <p>create Source Folder - name: test - create java class - name: ProdutoTest</p>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">}</a></code></pre></div>
-</section><section class="slide level2">
-
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">    </a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">    <span class="at">@Test</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">        </a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">    }</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">    </a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">}</a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">`Ctrl` + `<span class="dv">1</span>` -&gt; na linha <span class="kw">do</span> `<span class="at">@Test</span>` e add <span class="kw">package</span> JUnit4</a></code></pre></div>
-</section><section class="slide level2">
-
 <div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">    </a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">    <span class="at">@Test</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">        </a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">    }</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">    </a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">}</a></code></pre></div>
+<a class="sourceLine" id="cb6-5" data-line-number="5">}</a></code></pre></div>
 </section><section class="slide level2">
 
 <div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">import static</span><span class="im"> org.junit.Assert.assertEquals;</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">import</span><span class="im"> com.thoughtworks.xstream.XStream;</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">    </a>
-<a class="sourceLine" id="cb7-11" data-line-number="11">    <span class="at">@Test</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
-<a class="sourceLine" id="cb7-13" data-line-number="13">        <span class="bu">String</span> xmlEsperado = <span class="st">&quot;&lt;produto&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
-<a class="sourceLine" id="cb7-14" data-line-number="14">                <span class="st">&quot;  &lt;nome&gt;geladeira&lt;/nome&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
-<a class="sourceLine" id="cb7-15" data-line-number="15">                <span class="st">&quot;  &lt;preco&gt;1000.0&lt;/preco&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">                <span class="st">&quot;  &lt;descricao&gt;geladeira de duas portas&lt;/descricao&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
-<a class="sourceLine" id="cb7-17" data-line-number="17">                <span class="st">&quot;&lt;/produto&gt;&quot;</span>;</a>
-<a class="sourceLine" id="cb7-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19">        Produto geladeira = <span class="kw">new</span> <span class="fu">Produto</span>(<span class="st">&quot;geladeira&quot;</span>, <span class="fl">1000.0</span>, <span class="st">&quot;geladeira de duas portas&quot;</span>);</a>
-<a class="sourceLine" id="cb7-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb7-21" data-line-number="21">        XStream xstream = <span class="kw">new</span> <span class="fu">XStream</span>();</a>
-<a class="sourceLine" id="cb7-22" data-line-number="22">        xstream .<span class="fu">alias</span>(<span class="st">&quot;produto&quot;</span>, Produto.<span class="fu">class</span>);</a>
-<a class="sourceLine" id="cb7-23" data-line-number="23">        <span class="bu">String</span> xmlGerado = xstream.<span class="fu">toXML</span>(geladeira);</a>
-<a class="sourceLine" id="cb7-24" data-line-number="24"></a>
-<a class="sourceLine" id="cb7-25" data-line-number="25">        <span class="fu">assertEquals</span>(xmlEsperado, xmlGerado);</a>
-<a class="sourceLine" id="cb7-26" data-line-number="26">    }</a>
-<a class="sourceLine" id="cb7-27" data-line-number="27">    </a>
-<a class="sourceLine" id="cb7-28" data-line-number="28">}</a></code></pre></div>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    </a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">        </a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">    </a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">`Ctrl` + `<span class="dv">1</span>` -&gt; na linha <span class="kw">do</span> `<span class="at">@Test</span>` e add <span class="kw">package</span> JUnit4</a></code></pre></div>
 </section><section class="slide level2">
 
 <div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">    <span class="kw">private</span> <span class="dt">int</span> codigo;</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
-<a class="sourceLine" id="cb8-7" data-line-number="7">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9">    <span class="kw">public</span> <span class="fu">Produto</span>(<span class="dt">int</span> codigo, <span class="bu">String</span> nome, <span class="dt">double</span> preco, <span class="bu">String</span> descricao) {</a>
-<a class="sourceLine" id="cb8-10" data-line-number="10">        <span class="kw">this</span>.<span class="fu">codigo</span> = codigo;</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">        <span class="kw">this</span>.<span class="fu">nome</span> = nome;</a>
-<a class="sourceLine" id="cb8-12" data-line-number="12">        <span class="kw">this</span>.<span class="fu">preco</span> = preco;</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13">        <span class="kw">this</span>.<span class="fu">descricao</span> = descricao;</a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">    } </a>
-<a class="sourceLine" id="cb8-15" data-line-number="15">}</a></code></pre></div>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">    </a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">        </a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">    }</a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">import static</span><span class="im"> org.junit.Assert.assertEquals;</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="kw">import</span><span class="im"> com.thoughtworks.xstream.XStream;</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw">public</span> <span class="kw">class</span> ProdutoTest {</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">    </a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">GerarXml</span>() {</a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">        <span class="bu">String</span> xmlEsperado = <span class="st">&quot;&lt;produto&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">                <span class="st">&quot;  &lt;nome&gt;geladeira&lt;/nome&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">                <span class="st">&quot;  &lt;preco&gt;1000.0&lt;/preco&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">                <span class="st">&quot;  &lt;descricao&gt;geladeira de duas portas&lt;/descricao&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>+</a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">                <span class="st">&quot;&lt;/produto&gt;&quot;</span>;</a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">        Produto geladeira = <span class="kw">new</span> <span class="fu">Produto</span>(<span class="st">&quot;geladeira&quot;</span>, <span class="fl">1000.0</span>, <span class="st">&quot;geladeira de duas portas&quot;</span>);</a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">        XStream xstream = <span class="kw">new</span> <span class="fu">XStream</span>();</a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">        xstream .<span class="fu">alias</span>(<span class="st">&quot;produto&quot;</span>, Produto.<span class="fu">class</span>);</a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">        <span class="bu">String</span> xmlGerado = xstream.<span class="fu">toXML</span>(geladeira);</a>
+<a class="sourceLine" id="cb9-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">        <span class="fu">assertEquals</span>(xmlEsperado, xmlGerado);</a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">    }</a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">    </a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">package</span><span class="im"> br.com.fuctura.xstream;</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Produto {</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">    <span class="kw">private</span> <span class="dt">int</span> codigo;</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">    <span class="kw">private</span> <span class="bu">String</span> nome;</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">    <span class="kw">private</span> <span class="dt">double</span> preco;</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">    <span class="kw">private</span> <span class="bu">String</span> descricao;</a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9">    <span class="kw">public</span> <span class="fu">Produto</span>(<span class="dt">int</span> codigo, <span class="bu">String</span> nome, <span class="dt">double</span> preco, <span class="bu">String</span> descricao) {</a>
+<a class="sourceLine" id="cb10-10" data-line-number="10">        <span class="kw">this</span>.<span class="fu">codigo</span> = codigo;</a>
+<a class="sourceLine" id="cb10-11" data-line-number="11">        <span class="kw">this</span>.<span class="fu">nome</span> = nome;</a>
+<a class="sourceLine" id="cb10-12" data-line-number="12">        <span class="kw">this</span>.<span class="fu">preco</span> = preco;</a>
+<a class="sourceLine" id="cb10-13" data-line-number="13">        <span class="kw">this</span>.<span class="fu">descricao</span> = descricao;</a>
+<a class="sourceLine" id="cb10-14" data-line-number="14">    } </a>
+<a class="sourceLine" id="cb10-15" data-line-number="15">}</a></code></pre></div>
 </section></section>
     </div>
   </div>

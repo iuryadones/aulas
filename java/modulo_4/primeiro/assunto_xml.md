@@ -49,7 +49,18 @@ Arquivo: modelo.xml
 
 ---
 
-Construa arquivos em <b><i><span style="color:blue">XML</span></i></b> para uma <span style="color:orange">Estante</span> e <span style="color:red">Livro</span>.
+## Crie Projeto Java nos seguintes passos:
+  - File
+    - New
+      - Java Project
+        - Project name: xstream 
+        - Use an execution environments JRE: JavaSE-1.8
+        - Create separate folders for sources and class file: True
+        - Click: finish
+
+---
+
+Construa arquivos no formato <b><i><span style="color:blue">XML</span></i></b> para os objetos <span style="color:orange">Estante</span> e <span style="color:red">Livro</span>, ambos dentro do Projeto Java.
 
 ---
 
@@ -73,6 +84,35 @@ Modelo da estante
 |tipo   | 
 |tamanho| 
 |livros | 
+
+---
+
+arquivo: livro.xml
+
+```xml
+<livro>
+  <id>...</id>
+  <titulo>...</titulo>
+  <autor>...</autor>
+  <anoDeLancamento>...</anoDeLancamento>
+  <classificacao>...</classificacao>
+</livro>
+```
+
+---
+
+arquivo: estante.xml
+
+```xml
+<estante>
+  <id>...</id>
+  <tipo>...</tipo>
+  <tamanho>...</tamanho>
+  <livros>...</livros>
+</estante>
+```
+
+---
 
 #  Manipulando <b><i><span style="color:blue">XML</span></i></b> com Java
 
