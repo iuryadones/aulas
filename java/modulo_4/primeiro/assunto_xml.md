@@ -5,25 +5,90 @@ output   :
     revealjs::revealjs_presentation
 ---
 
-#  Manipulando xml
+# Você sabe o que é <b><i><span style="color:blue">XML</span></i></b>?
 
 ---
 
-![test image size](java/modulo_4/primeiro/images/test.png) 
-
----
-
-file: exemplo.xml
+Arquivo: modelo.xml
 
 ```xml
-<produto>
-  <nome>geladeira</nome>
-  <preco>1000.0</preco>
-  <descricao>geladeira de duas portas</descricao>
-</produto>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<estudante codigo="1">
+  <nome>João Pernambucano de Recife</nome>
+  <curso>Java Avançado</curso>
+  <caracteristica>Megalomaníaco</caracteristica>
+</estudante>
 ```
 
 ---
+
+## <b><i><span style="color:blue">XML</span></i></b> – LINGUAGEM DE MARCAÇÃO
+
+  - <b><i><span style="color:blue">XML</span></i></b>, do inglês <i><b><span style="color:yellow">eXtensible Markup Language</span></i></b>, é uma linguagem de marcação recomendada pela <i><b><span style="color:green">W3C</span></i></b> para a criação de documentos com dados organizados hierarquicamente, tais como textos, banco de dados ou desenhos vetoriais.
+  - A linguagem <b><i><span style="color:blue">XML</span></i></b> é classificada como extensível porque permite definir os elementos de marcação.
+
+---
+
+## MARCAÇÃO?
+
+  - Linguagem de marcação é um agregado de códigos que podem ser aplicados a dados ou textos para serem lidos por computadores ou pessoas.
+  - Por exemplo, o <b><i><span style="color:red">HTML</span></i></b> é uma linguagem de marcação para organizar e formatar um website, já o <b><i><span style="color:blue">XML</span></i></b> tem o mesmo conceito, mas para padronizar uma sequência de dados com o objetivo de organizar, separar o conteúdo e integrá-lo com outras linguagens
+
+---
+
+## PRINCIPAIS CARACTERÍSTICAS DO <b><i><span style="color:blue">XML</span></i></b>
+
+  - Separação do conteúdo da formatação
+  - Simplicidade e legibilidade, tanto para humanos quanto para computadores
+  - Possibilidade de criação de tags sem limitação
+  - Criação de arquivos para validação de estrutura (chamados DTDs)
+  - Interligação de bancos de dados distintos
+  - Concentração na estrutura da informação, e não na sua aparência
+
+# Exercícios
+
+---
+
+Construa arquivos em <b><i><span style="color:blue">XML</span></i></b> para uma <span style="color:orange">Estante</span> e <span style="color:red">Livro</span>.
+
+---
+
+Modelo do livro
+
+|<span style="color:red">Livro</span>|
+|:----------------|
+|id               |
+|titulo           |
+|autor            |
+|ano de lançamento|
+|classificação    |
+
+---
+
+Modelo da estante
+
+|<span style="color:orange">Estante</span>| 
+|:------| 
+|id     | 
+|tipo   | 
+|tamanho| 
+|livros | 
+
+#  Manipulando <b><i><span style="color:blue">XML</span></i></b> com Java
+
+---
+
+## Usaremos o [xstream](http://x-stream.github.io/download.html)
+
+  - Baixe o arquivo `.zip` da distribuição binária
+  - Descompactar
+  - Usaremos os packages:
+    - xstream-\*/lib/xstream/xpp3\_min-\*.jar
+    - xstream-\*/lib/xstream-\*.jar
+
+---
+
+<!-- ![test image size](java/modulo_4/primeiro/images/test.png) -->
 
 Ctrl + n criar uma classe
 
