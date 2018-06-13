@@ -16,3 +16,11 @@
  - web-django
 * Git
 * Docker
+
+standalone
+
+## Run
+
+```bash
+$ source run.sh aula.md aula.html
+```
