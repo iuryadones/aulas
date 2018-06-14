@@ -385,10 +385,10 @@ public class EstanteTest {
         @Test
         public void GerarXml() {
                 String xmlEsperado = "<estante>\n"+
-                                     "<id>1</id>\n"+
-                                     "<tipo>guarda livros</tipo>\n"+
-                                     "<tamanho>100.0</tamanho>\n"+
-                                     "<livros>1,2,3</livros>\n"+
+                                     "  <id>1</id>\n"+
+                                     "  <tipo>guarda livros</tipo>\n"+
+                                     "  <tamanho>100.0</tamanho>\n"+
+                                     "  <livros>1,2,3</livros>\n"+
                                      "</estante>";
 
                 Estante armario = new Estante(1,
@@ -447,7 +447,7 @@ public class EstanteTest {
                                               "1,2,3");
 
                 XStream xstream = new XStream();
-                xstream .alias("estante", Produto.class);
+                xstream .alias("estante", Estante.class);
                 String xmlGerado = xstream.toXML(armario);
 
                 assertEquals(xmlEsperado, xmlGerado);

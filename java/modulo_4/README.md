@@ -48,6 +48,7 @@ contratual em ambas partes.
 
 ### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=OmcT0nhBSnc
+ - https://www.youtube.com/watch?v=UMhskLXJuq4
 
 ### Site complementar (Inspiração da aula)
  - https://services.github.com/on-demand/downloads/pt_BR/github-git-cheat-sheet/
