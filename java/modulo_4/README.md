@@ -15,7 +15,7 @@ contratual em ambas partes.
 
 # Etapas
 
-## primeira
+## Primeira
 
 ### xml
  - estrutura do xml
@@ -24,18 +24,35 @@ contratual em ambas partes.
  - manipulação do xml
  - uso do package xstream
 
-### vídeo complemento (inspiração da aula)
+### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=5f0r093VCfI&app=desktop
 
-## segunda
+## Segunda
+
+### Testes
+ - Testes Unitários
+ - Testes Integrados 
  - Junit4
  - Junit5
- - Testes unitários
- - Testes integrados 
  - Jmeter
+ - Selenium
 
-## terceira
+### Vídeo complemento (Inspiração da aula)
+ - https://www.youtube.com/watch?v=Jo3IK846YdY
+ - https://www.youtube.com/watch?v=Dyls2ljtAZQ
 
-## quarta
+## Terceira
 
-## quinta
+### Controle de versão de código
+ - git
+
+### Vídeo complemento (Inspiração da aula)
+ - https://www.youtube.com/watch?v=OmcT0nhBSnc
+
+### Site complementar (Inspiração da aula)
+ - https://services.github.com/on-demand/downloads/pt_BR/github-git-cheat-sheet/
+ - https://services.github.com/on-demand/downloads/pt_BR/github-git-cheat-sheet/
+
+## Quarta
+
+## Quinta
