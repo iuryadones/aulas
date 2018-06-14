@@ -1,7 +1,6 @@
 ---
 title    : java e xml
 author   : Prof. Iury Adones
-date     : 13/06/2018
 output   : 
     revealjs::revealjs_presentation
 ---
