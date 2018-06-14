@@ -28,6 +28,11 @@ contratual em ambas partes.
  - https://www.youtube.com/watch?v=5f0r093VCfI&app=desktop
 
 ## segunda
+ - Junit4
+ - Junit5
+ - Testes unitários
+ - Testes integrados 
+ - Jmeter
 
 ## terceira
 
