@@ -41,6 +41,9 @@ contratual em ambas partes.
  - https://www.youtube.com/watch?v=Jo3IK846YdY
  - https://www.youtube.com/watch?v=Dyls2ljtAZQ
 
+### Site complementar (Inspiração da aula)
+ - https://junit.org/junit5/docs/current/user-guide/
+
 ## Terceira
 
 ### Controle de versão de código

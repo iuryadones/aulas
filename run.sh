@@ -10,11 +10,16 @@
 # pandoc -t revealjs -s $1 -o $2 --highlight-style=haddock --self-contained --slide-level=2 --standalone --smart
 
 
-pandoc -t revealjs -s $1 -o $2 \
+pandoc -toc -s \
+       -i \
+       --from=markdown \
+       --standalone \
+       --to=html5 \
        --highlight-style=kate \
        --self-contained \
        --slide-level=2 \
-       --standalone \
        --resource-path=. \
        --variable theme="black" \
-       --variable transition="linear"
+       --variable transition="linear" \
+       -t revealjs $1 \
+       -o $2
