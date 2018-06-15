@@ -59,6 +59,8 @@ Cliente recebe um software
 
 ## Desenvolver uma Calculadora Científica
 
+![](./java/modulo_4/segunda/images/calculadora-cientifica.jpg)
+
 ---
 
 ![WTF?](./java/modulo_4/segunda/images/WTF.jpg)
@@ -100,6 +102,257 @@ Cliente recebe um software
 ## Ops, Tem Surpresa!
 
 # Práticas com JUnit4
+
+---
+
+assertArrayEquals
+
+```java
+import static org.junit.Assert.assertArrayEquals;
+
+import org.junit.Test;
+
+public class AssertTest {
+
+    @Test
+    public void testAssertArrayEquals() {
+        byte[] expected = "trial".getBytes();
+        byte[] actual = "trial".getBytes();
+
+        assertArrayEquals("failure - byte arrays not same", 
+                          expected, 
+                          actual);
+    }
+}
+```
+
+---
+
+assertEquals
+
+```java
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertEquals() {
+        assertEquals("failure - strings are not equal", "text", "text");
+    }
+
+}
+```
+
+---
+
+assertFalse
+
+```java
+import static org.junit.Assert.assertFalse;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertFalse() {
+        assertFalse("failure - should be false", false);
+    }
+
+}
+```
+
+---
+
+assertNotNull
+
+```java
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertNotNull() {
+        assertNotNull("should not be null", new Object());
+    }
+
+}
+```
+
+---
+
+assertNotSame
+
+```java
+import static org.junit.Assert.assertNotSame;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertNotSame() {
+        assertNotSame("should not be same Object", new Object(), new Object());
+    }
+
+}
+```
+
+---
+
+assertNull
+
+```java
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertNull() {
+        assertNull("should be null", null);
+    }
+
+}
+```
+
+---
+
+assertSame
+
+```java
+import static org.junit.Assert.assertSame;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertSame() {
+        Integer aNumber = Integer.valueOf(768);
+        assertSame("should be same", aNumber, aNumber);
+    }
+
+}
+```
+
+---
+
+assertThat
+
+```java
+import static org.hamcrest.CoreMatchers.both;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    // JUnit Matchers assertThat
+    @Test
+    public void testAssertThatBothContainsString() {
+        assertThat("albumen", 
+                   both(containsString("a")).and(containsString("b")));
+    }
+
+}
+```
+
+---
+
+assertThat
+
+```java
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.junit.Assert.assertThat;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertThatHasItems() {
+        assertThat(Arrays.asList("one", "two", "three"),
+                   hasItems("one", "three"));
+    }
+
+}
+```
+
+---
+
+assertThat
+
+```java
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.everyItem;
+import static org.junit.Assert.assertThat;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertThatEveryItemContainsString() {
+        assertThat(Arrays.asList(new String[] { "fun", "ban", "net" }), 
+                                 everyItem(containsString("n")));
+    }
+
+}
+```
+
+---
+
+assertThat
+
+```java
+...
+public class AssertTests {
+
+  // Core Hamcrest Matchers with assertThat
+  @Test
+  public void testAssertThatHamcrestCoreMatchers() {
+    assertThat("good", allOf(equalTo("good"), startsWith("good")));
+    assertThat("good", not(allOf(equalTo("bad"), equalTo("good"))));
+    assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
+    assertThat(
+      7, 
+      not(CombinableMatcher.<Integer> either(equalTo(3)).or(equalTo(4)))
+    );
+    assertThat(new Object(), not(sameInstance(new Object())));
+  }
+
+}
+```
+
+---
+
+assertTrue
+
+```java
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class AssertTests {
+
+    @Test
+    public void testAssertTrue() {
+        assertTrue("failure - should be true", true);
+    }
+
+}
+```
 
 ---
 
