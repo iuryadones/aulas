@@ -75,7 +75,7 @@ public void exibirNumeros() {
 // Métodos de Testes
 ```
 
-# Ferramenta de Integração Continua
+# Ferramenta de Integração Contínua
 
 ---
 
@@ -100,5 +100,9 @@ public void exibirNumeros() {
  - Git
  - Github
  - Ferramenta de CI com Github
+
+---
+
+![Integração Contínua](./java/modulo_4/segunda/images/continuous_integration.png)
 
 # Fim
