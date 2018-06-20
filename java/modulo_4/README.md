@@ -31,18 +31,22 @@ contratual em ambas partes.
 
 ### Testes
  - Testes Unitários
+  - Junit4
+  - Junit5
  - Testes Integrados 
- - Junit4
- - Junit5
- - Jmeter
- - Selenium
+   - Jenkins
 
 ### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=Jo3IK846YdY
  - https://www.youtube.com/watch?v=Dyls2ljtAZQ
+ - https://www.youtube.com/watch?v=lSNXI5m32DU
+ - https://www.youtube.com/watch?v=bGqS0f4Utn4 
+ - https://www.youtube.com/watch?v=7Il\_8\_YPWtk
 
 ### Site complementar (Inspiração da aula)
  - https://junit.org/junit5/docs/current/user-guide/
+ - https://medium.com/cwi-software/testes-automatizados-no-jenkins-recursos-plugins-e-dicas-para-aumentar-a-produtividade-1685ffa1e9db
+ - 
 
 ## Terceira
 
@@ -54,8 +58,7 @@ contratual em ambas partes.
  - https://www.youtube.com/watch?v=UMhskLXJuq4
 
 ### Site complementar (Inspiração da aula)
- - https://services.github.com/on-demand/downloads/pt_BR/github-git-cheat-sheet/
- - https://services.github.com/on-demand/downloads/pt_BR/github-git-cheat-sheet/
+ - https://services.github.com/on-demand/downloads/pt\_BR/github-git-cheat-sheet/
 
 ## Quarta
 
