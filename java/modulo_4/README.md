@@ -46,7 +46,9 @@ contratual em ambas partes.
 ### Site complementar (Inspiração da aula)
  - https://junit.org/junit5/docs/current/user-guide/
  - https://medium.com/cwi-software/testes-automatizados-no-jenkins-recursos-plugins-e-dicas-para-aumentar-a-produtividade-1685ffa1e9db
- - 
+ - http://www.universidadejava.com.br/materiais/ic-jenkins-maven-subversion-sonar/
+ - https://www.devmedia.com.br/ferramentas-de-suporte-ao-teste-de-software/28642
+ - http://blog.triadworks.com.br/testes-de-integracao-na-pratica-classes-que-manipulam-arquivos-com-junit
 
 ## Terceira
 
