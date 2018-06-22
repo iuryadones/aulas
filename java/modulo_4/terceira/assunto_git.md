@@ -331,6 +331,57 @@ Use o projeto Java da Calculadora, deixe só a classe Soma e a classe SomaTeste,
 
 ---
 
+> Adicione pom.xml
+
+---
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>calculadora</groupId>
+  <artifactId>calculadora-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+ 
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+## Calculadora - Tree
+
+```bash
+.
+├── pom.xml
+├── README.md
+└── src
+    ├── main
+    │   └── java
+    │       └── calculadora
+    │           └── Soma.java
+    └── test
+        └── java
+            └── calculadora
+                └── SomaTest.java
+```
+
+---
+
 > Enviei ao GitHub
 
 # Github com CI
@@ -359,37 +410,6 @@ Use o projeto Java da Calculadora, deixe só a classe Soma e a classe SomaTeste,
 
 ---
 
-> Adicione pom.xml
-
----
-
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-  <modelVersion>4.0.0</modelVersion>
- 
-  <groupId>calculadora</groupId>
-  <artifactId>calculadora-app</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
- 
-  <name>Maven Quick Start Archetype</name>
-  <url>http://maven.apache.org</url>
- 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.8.2</version>
-      <scope>srctest</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-
----
 
 ## Agora estamos com CI
 
@@ -413,5 +433,4 @@ Use o projeto Java da Calculadora, deixe só a classe Soma e a classe SomaTeste,
     - Github
 
 # Fim
-
 

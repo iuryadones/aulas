@@ -1794,31 +1794,6 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 </section><section class="slide level2">
 
 <blockquote>
-<p>Enviei ao GitHub</p>
-</blockquote>
-</section></section>
-<section><section id="github-com-ci" class="title-slide slide level1"><h1>Github com CI</h1></section><section class="slide level2">
-
-<blockquote>
-<p>Usaremos o CircleCI</p>
-</blockquote>
-</section><section id="vincule-sua-conta-do-github" class="slide level2">
-<h2>Vincule sua conta do github</h2>
-<p><a href="https://circleci.com" class="uri">https://circleci.com</a></p>
-</section><section id="vamos-adicionar-o-projeto-calculadora" class="slide level2">
-<h2>Vamos adicionar o projeto calculadora</h2>
-<ul>
-<li class="fragment">Add Project</li>
-<li class="fragment">calculadora : Set Up Project</li>
-<li class="fragment">Selecione Sistema Operacional: Linux</li>
-<li class="fragment">Selecione Linguagem: Maven (Java)</li>
-<li class="fragment">Crie uma pasta chamada .circleci e add um fileconfig.yml (então fica assim .circleci/config.yml).</li>
-<li class="fragment">Copie e cole no config.yml as configurações</li>
-<li class="fragment">Start Building</li>
-</ul>
-</section><section class="slide level2">
-
-<blockquote>
 <p>Adicione pom.xml</p>
 </blockquote>
 </section><section class="slide level2">
@@ -1842,10 +1817,49 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 <a class="sourceLine" id="cb21-17" data-line-number="17">      <span class="kw">&lt;groupId&gt;</span>junit<span class="kw">&lt;/groupId&gt;</span></a>
 <a class="sourceLine" id="cb21-18" data-line-number="18">      <span class="kw">&lt;artifactId&gt;</span>junit<span class="kw">&lt;/artifactId&gt;</span></a>
 <a class="sourceLine" id="cb21-19" data-line-number="19">      <span class="kw">&lt;version&gt;</span>4.8.2<span class="kw">&lt;/version&gt;</span></a>
-<a class="sourceLine" id="cb21-20" data-line-number="20">      <span class="kw">&lt;scope&gt;</span>srctest<span class="kw">&lt;/scope&gt;</span></a>
+<a class="sourceLine" id="cb21-20" data-line-number="20">      <span class="kw">&lt;scope&gt;</span>test<span class="kw">&lt;/scope&gt;</span></a>
 <a class="sourceLine" id="cb21-21" data-line-number="21">    <span class="kw">&lt;/dependency&gt;</span></a>
 <a class="sourceLine" id="cb21-22" data-line-number="22">  <span class="kw">&lt;/dependencies&gt;</span></a>
 <a class="sourceLine" id="cb21-23" data-line-number="23"><span class="kw">&lt;/project&gt;</span></a></code></pre></div>
+</section><section id="calculadora---tree" class="slide level2">
+<h2>Calculadora - Tree</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="ex">.</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">├── <span class="ex">pom.xml</span></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">├── <span class="ex">README.md</span></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">└── <span class="ex">src</span></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">    ├── <span class="ex">main</span></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">    │   └── <span class="ex">java</span></a>
+<a class="sourceLine" id="cb22-7" data-line-number="7">    │       └── <span class="ex">calculadora</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">    │           └── <span class="ex">Soma.java</span></a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">    └── <span class="bu">test</span></a>
+<a class="sourceLine" id="cb22-10" data-line-number="10">        └── <span class="ex">java</span></a>
+<a class="sourceLine" id="cb22-11" data-line-number="11">            └── <span class="ex">calculadora</span></a>
+<a class="sourceLine" id="cb22-12" data-line-number="12">                └── <span class="ex">SomaTest.java</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Enviei ao GitHub</p>
+</blockquote>
+</section></section>
+<section><section id="github-com-ci" class="title-slide slide level1"><h1>Github com CI</h1></section><section class="slide level2">
+
+<blockquote>
+<p>Usaremos o CircleCI</p>
+</blockquote>
+</section><section id="vincule-sua-conta-do-github" class="slide level2">
+<h2>Vincule sua conta do github</h2>
+<p><a href="https://circleci.com" class="uri">https://circleci.com</a></p>
+</section><section id="vamos-adicionar-o-projeto-calculadora" class="slide level2">
+<h2>Vamos adicionar o projeto calculadora</h2>
+<ul>
+<li class="fragment">Add Project</li>
+<li class="fragment">calculadora : Set Up Project</li>
+<li class="fragment">Selecione Sistema Operacional: Linux</li>
+<li class="fragment">Selecione Linguagem: Maven (Java)</li>
+<li class="fragment">Crie uma pasta chamada .circleci e add um fileconfig.yml (então fica assim .circleci/config.yml).</li>
+<li class="fragment">Copie e cole no config.yml as configurações</li>
+<li class="fragment">Start Building</li>
+</ul>
 </section><section id="agora-estamos-com-ci" class="slide level2">
 <h2>Agora estamos com CI</h2>
 </section><section class="slide level2">
