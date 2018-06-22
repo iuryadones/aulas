@@ -17,12 +17,13 @@ contratual em ambas partes.
 
 ## Primeira
 
-### xml
- - estrutura do xml
- - padrão
- - algumas das aplicações
- - manipulação do xml
- - uso do package xstream
+### Arquivo xml
+ - xml
+  - estrutura do xml
+  - padrão
+  - algumas das aplicações
+ - Manipulação do xml 
+  - uso do package xstream
 
 ### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=5f0r093VCfI&app=desktop
@@ -32,9 +33,9 @@ contratual em ambas partes.
 ### Testes
  - Testes Unitários
   - Junit4
-  - Junit5
+  - Junit4 vs Junit5
  - Testes Integrados 
-   - Jenkins
+   - Junit4
 
 ### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=Jo3IK846YdY
@@ -53,7 +54,12 @@ contratual em ambas partes.
 ## Terceira
 
 ### Controle de versão de código
- - git
+ - Git
+  - Github
+  - Testes de CI com CircleCI
+ - Métodos Ágeis
+  - Scrum
+  - Kanban
 
 ### Vídeo complemento (Inspiração da aula)
  - https://www.youtube.com/watch?v=OmcT0nhBSnc
