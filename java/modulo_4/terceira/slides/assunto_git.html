@@ -1790,51 +1790,127 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" data-line-number="1">$ <span class="fu">git</span> log</a></code></pre></div>
 </section><section id="vamos-nos-aprofundar" class="slide level2">
 <h2>Vamos nos Aprofundar</h2>
-<p>Use o projeto Java da Calculadora, deixe só a classe Soma e a classe SomaTeste, mova para a pasta da calculadora que está com o github.</p>
+</section><section id="crie-um-projeto-java" class="slide level2">
+<h2>Crie um projeto Java</h2>
+<ul>
+<li class="fragment">Nome: calculadora</li>
+</ul>
 </section><section class="slide level2">
 
 <blockquote>
-<p>Adicione pom.xml</p>
+<p>Classe Soma</p>
+</blockquote>
+<ul>
+<li class="fragment">Construa uma pasta src/main/java/calculadora</li>
+<li class="fragment">Dentro da pasta adicione uma classe: Soma</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">package</span><span class="im"> main.java.calculadora;</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Soma {</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">    </a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">calc</span>(<span class="dt">int</span> x, <span class="dt">int</span> y) {</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">        <span class="kw">return</span> x + y;</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Classe SomaTest</p>
+</blockquote>
+<ul>
+<li class="fragment">Construa uma pasta src/test/java/calculadora</li>
+<li class="fragment">Dentro da pasta adicione uma classe: SomaTest</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" data-line-number="1">...</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">public</span> <span class="kw">class</span> SomaTest {</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">    <span class="kw">public</span> <span class="dt">int</span> valorX, valorY, resposta;</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">    <span class="at">@Before</span></a>
+<a class="sourceLine" id="cb22-7" data-line-number="7">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">atribuiValores</span>() {</a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">        valorX = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">        valorY = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb22-10" data-line-number="10">        resposta = <span class="dv">15</span>;</a>
+<a class="sourceLine" id="cb22-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb22-12" data-line-number="12">    ...</a>
+<a class="sourceLine" id="cb22-13" data-line-number="13">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" data-line-number="1">...</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">public</span> <span class="kw">class</span> SomaTest {</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">    ...</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">    <span class="at">@After</span></a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">exibiValores</span>() {</a>
+<a class="sourceLine" id="cb23-6" data-line-number="6">        Soma soma = <span class="kw">new</span> <span class="fu">Soma</span>();</a>
+<a class="sourceLine" id="cb23-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb23-8" data-line-number="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Esperado: &quot;</span>+</a>
+<a class="sourceLine" id="cb23-9" data-line-number="9">        valorX+<span class="st">&quot; + &quot;</span>+valorY+<span class="st">&quot; = &quot;</span>+resposta);</a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb23-11" data-line-number="11">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Gerado: &quot;</span>+</a>
+<a class="sourceLine" id="cb23-12" data-line-number="12">        valorX+<span class="st">&quot; + &quot;</span>+valorY+<span class="st">&quot; = &quot;</span>+soma.<span class="fu">calc</span>(valorX, valorY));</a>
+<a class="sourceLine" id="cb23-13" data-line-number="13">    }</a>
+<a class="sourceLine" id="cb23-14" data-line-number="14">    ...</a>
+<a class="sourceLine" id="cb23-15" data-line-number="15">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" data-line-number="1">...</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">public</span> <span class="kw">class</span> SomaTest {</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    ...</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">somarValorXcomValorY</span>() {</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6">        Soma soma = <span class="kw">new</span> <span class="fu">Soma</span>();</a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb24-8" data-line-number="8">        <span class="fu">assertEquals</span>(resposta, soma.<span class="fu">calc</span>(valorX, valorY));</a>
+<a class="sourceLine" id="cb24-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb24-10" data-line-number="10">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Adicione pom.xml na raíz do projeto</p>
 </blockquote>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">&lt;project</span><span class="ot"> xmlns=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> </a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb21-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb21-5" data-line-number="5">  <span class="kw">&lt;modelVersion&gt;</span>4.0.0<span class="kw">&lt;/modelVersion&gt;</span></a>
-<a class="sourceLine" id="cb21-6" data-line-number="6"> </a>
-<a class="sourceLine" id="cb21-7" data-line-number="7">  <span class="kw">&lt;groupId&gt;</span>calculadora<span class="kw">&lt;/groupId&gt;</span></a>
-<a class="sourceLine" id="cb21-8" data-line-number="8">  <span class="kw">&lt;artifactId&gt;</span>calculadora-app<span class="kw">&lt;/artifactId&gt;</span></a>
-<a class="sourceLine" id="cb21-9" data-line-number="9">  <span class="kw">&lt;version&gt;</span>1.0-SNAPSHOT<span class="kw">&lt;/version&gt;</span></a>
-<a class="sourceLine" id="cb21-10" data-line-number="10">  <span class="kw">&lt;packaging&gt;</span>jar<span class="kw">&lt;/packaging&gt;</span></a>
-<a class="sourceLine" id="cb21-11" data-line-number="11"> </a>
-<a class="sourceLine" id="cb21-12" data-line-number="12">  <span class="kw">&lt;name&gt;</span>Maven Quick Start Archetype<span class="kw">&lt;/name&gt;</span></a>
-<a class="sourceLine" id="cb21-13" data-line-number="13">  <span class="kw">&lt;url&gt;</span>http://maven.apache.org<span class="kw">&lt;/url&gt;</span></a>
-<a class="sourceLine" id="cb21-14" data-line-number="14"> </a>
-<a class="sourceLine" id="cb21-15" data-line-number="15">  <span class="kw">&lt;dependencies&gt;</span></a>
-<a class="sourceLine" id="cb21-16" data-line-number="16">    <span class="kw">&lt;dependency&gt;</span></a>
-<a class="sourceLine" id="cb21-17" data-line-number="17">      <span class="kw">&lt;groupId&gt;</span>junit<span class="kw">&lt;/groupId&gt;</span></a>
-<a class="sourceLine" id="cb21-18" data-line-number="18">      <span class="kw">&lt;artifactId&gt;</span>junit<span class="kw">&lt;/artifactId&gt;</span></a>
-<a class="sourceLine" id="cb21-19" data-line-number="19">      <span class="kw">&lt;version&gt;</span>4.8.2<span class="kw">&lt;/version&gt;</span></a>
-<a class="sourceLine" id="cb21-20" data-line-number="20">      <span class="kw">&lt;scope&gt;</span>test<span class="kw">&lt;/scope&gt;</span></a>
-<a class="sourceLine" id="cb21-21" data-line-number="21">    <span class="kw">&lt;/dependency&gt;</span></a>
-<a class="sourceLine" id="cb21-22" data-line-number="22">  <span class="kw">&lt;/dependencies&gt;</span></a>
-<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="kw">&lt;/project&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">&lt;project</span><span class="ot"> xmlns=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> </a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5">  <span class="kw">&lt;modelVersion&gt;</span>4.0.0<span class="kw">&lt;/modelVersion&gt;</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"> </a>
+<a class="sourceLine" id="cb25-7" data-line-number="7">  <span class="kw">&lt;groupId&gt;</span>calculadora<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb25-8" data-line-number="8">  <span class="kw">&lt;artifactId&gt;</span>calculadora-app<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9">  <span class="kw">&lt;version&gt;</span>1.0-SNAPSHOT<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10">  <span class="kw">&lt;packaging&gt;</span>jar<span class="kw">&lt;/packaging&gt;</span></a>
+<a class="sourceLine" id="cb25-11" data-line-number="11"> </a>
+<a class="sourceLine" id="cb25-12" data-line-number="12">  <span class="kw">&lt;name&gt;</span>Maven Quick Start Archetype<span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="cb25-13" data-line-number="13">  <span class="kw">&lt;url&gt;</span>http://maven.apache.org<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb25-14" data-line-number="14"> </a>
+<a class="sourceLine" id="cb25-15" data-line-number="15">  <span class="kw">&lt;dependencies&gt;</span></a>
+<a class="sourceLine" id="cb25-16" data-line-number="16">    <span class="kw">&lt;dependency&gt;</span></a>
+<a class="sourceLine" id="cb25-17" data-line-number="17">      <span class="kw">&lt;groupId&gt;</span>junit<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb25-18" data-line-number="18">      <span class="kw">&lt;artifactId&gt;</span>junit<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb25-19" data-line-number="19">      <span class="kw">&lt;version&gt;</span>4.8.2<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb25-20" data-line-number="20">      <span class="kw">&lt;scope&gt;</span>test<span class="kw">&lt;/scope&gt;</span></a>
+<a class="sourceLine" id="cb25-21" data-line-number="21">    <span class="kw">&lt;/dependency&gt;</span></a>
+<a class="sourceLine" id="cb25-22" data-line-number="22">  <span class="kw">&lt;/dependencies&gt;</span></a>
+<a class="sourceLine" id="cb25-23" data-line-number="23"><span class="kw">&lt;/project&gt;</span></a></code></pre></div>
 </section><section id="calculadora---tree" class="slide level2">
 <h2>Calculadora - Tree</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="ex">.</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">├── <span class="ex">pom.xml</span></a>
-<a class="sourceLine" id="cb22-3" data-line-number="3">├── <span class="ex">README.md</span></a>
-<a class="sourceLine" id="cb22-4" data-line-number="4">└── <span class="ex">src</span></a>
-<a class="sourceLine" id="cb22-5" data-line-number="5">    ├── <span class="ex">main</span></a>
-<a class="sourceLine" id="cb22-6" data-line-number="6">    │   └── <span class="ex">java</span></a>
-<a class="sourceLine" id="cb22-7" data-line-number="7">    │       └── <span class="ex">calculadora</span></a>
-<a class="sourceLine" id="cb22-8" data-line-number="8">    │           └── <span class="ex">Soma.java</span></a>
-<a class="sourceLine" id="cb22-9" data-line-number="9">    └── <span class="bu">test</span></a>
-<a class="sourceLine" id="cb22-10" data-line-number="10">        └── <span class="ex">java</span></a>
-<a class="sourceLine" id="cb22-11" data-line-number="11">            └── <span class="ex">calculadora</span></a>
-<a class="sourceLine" id="cb22-12" data-line-number="12">                └── <span class="ex">SomaTest.java</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="ex">.</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">├── <span class="ex">pom.xml</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">├── <span class="ex">README.md</span></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">└── <span class="ex">src</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5">    ├── <span class="ex">main</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6">    │   └── <span class="ex">java</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">    │       └── <span class="ex">calculadora</span></a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">    │           └── <span class="ex">Soma.java</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9">    └── <span class="bu">test</span></a>
+<a class="sourceLine" id="cb26-10" data-line-number="10">        └── <span class="ex">java</span></a>
+<a class="sourceLine" id="cb26-11" data-line-number="11">            └── <span class="ex">calculadora</span></a>
+<a class="sourceLine" id="cb26-12" data-line-number="12">                └── <span class="ex">SomaTest.java</span></a></code></pre></div>
 </section><section class="slide level2">
 
 <blockquote>

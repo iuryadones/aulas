@@ -327,11 +327,94 @@ $ git log
 
 ## Vamos nos Aprofundar
 
-Use o projeto Java da Calculadora, deixe só a classe Soma e a classe SomaTeste, mova para a pasta da calculadora que está com o github.
+---
+
+## Crie um projeto Java
+  - Nome: calculadora
 
 ---
 
-> Adicione pom.xml
+> Classe Soma
+
+  - Construa uma pasta src/main/java/calculadora
+  - Dentro da pasta adicione uma classe: Soma
+
+---
+
+```java
+package main.java.calculadora;
+
+public class Soma {
+	
+	public int calc(int x, int y) {
+		return x + y;
+	}
+}
+```
+
+---
+
+> Classe SomaTest
+
+  - Construa uma pasta src/test/java/calculadora
+  - Dentro da pasta adicione uma classe: SomaTest
+
+---
+
+```java
+...
+public class SomaTest {
+
+    public int valorX, valorY, resposta;
+
+    @Before
+    public void atribuiValores() {
+        valorX = 10;
+        valorY = 5;
+        resposta = 15;
+    }
+    ...
+}
+```
+
+---
+
+```java
+...
+public class SomaTest {
+    ...
+    @After
+    public void exibiValores() {
+        Soma soma = new Soma();
+
+        System.out.println("Esperado: "+
+        valorX+" + "+valorY+" = "+resposta);
+
+        System.out.println("Gerado: "+
+        valorX+" + "+valorY+" = "+soma.calc(valorX, valorY));
+    }
+    ...
+}
+```
+
+---
+
+```java
+...
+public class SomaTest {
+    ...
+    @Test
+    public void somarValorXcomValorY() {
+        Soma soma = new Soma();
+
+        assertEquals(resposta, soma.calc(valorX, valorY));
+    }
+}
+```
+
+---
+
+> Adicione pom.xml na raíz do projeto
 
 ---
 
