@@ -1,6 +1,57 @@
+---
+title    : Python
+author   : Prof. Iury Adones
+output   : 
+    revealjs::revealjs_presentation
+---
+
 # Python3
 
-## Python types
+---
+
+Instalando python 3.x no windows.
+
+Download: www.python.org
+
+---
+
+Instalando no Ubuntu
+
+```bash
+$ sudo apt-get install python3.x
+```
+
+---
+
+Instalando no Archlinux
+
+```bash
+$ sudo pacman -S python
+```
+
+---
+
+Executar python
+
+```bash
+$ python
+Python 3.x.x (default, May 11 2018, ##:##:##) 
+[GCC 8.1.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+```
+
+---
+
+```bash
+>>> print('Olá mundo!')
+Olá mundo!
+>>>exit()
+```
+
+# Python types variables
+
+---
 
 Interger - `int`
 
@@ -11,6 +62,8 @@ Interger - `int`
 22
 100
 ```
+
+---
 
 Float - `float`
 
@@ -25,6 +78,8 @@ Float - `float`
 2E-10
 ```
 
+---
+
 String - `str`
 
 ```python
@@ -34,6 +89,8 @@ String - `str`
 'A festa foi "divertida"'
 ```
 
+---
+
 List - `list`
 
 ```python
@@ -42,12 +99,16 @@ List - `list`
 [1, 'maçã', 2, 'banana']
 ```
 
+---
+
 Dicionary - `dict`
 
 ```python
 {"cpf": "094.940.490-04"}
 {001: {"nome": "Usuário de Python", "idade": 22}}
 ```
+
+---
 
 Set - `set`
 
