@@ -1,7 +1,6 @@
 ---
 author: Prof. Iury Adones
 title: Python easy 
-date: 03/10/2017
 ---
 
 # Cronograma
