@@ -1,0 +1,8 @@
+\babel@toc {brazil}{}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Sobre o Artigo}{3}{0}{1}
+\beamer@sectionintoc {2}{Metodologia}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Informa\c c\~oes do modelo proposto no peri\'odico}{5}{0}{2}
+\beamer@sectionintoc {3}{Resultados}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Modelos baseados no ecossistema}{13}{0}{3}
+\beamer@sectionintoc {4}{Conclus\~ao}{18}{0}{4}
