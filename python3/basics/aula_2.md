@@ -229,33 +229,33 @@ About set():
 
 ---
 
-### Arquivos
+### Repetições
 
 ---
 
 ### Estrutura de controle
 
+---
+
+### Arquivos
 
 ---
 
 ### Módulos padrões
 
-
 ---
 
 ### Funções
-
 
 ---
 
 ### Módulos e Pacotes
 
+---
+
+### Classes
 
 ---
 
 ### Python funcional
 
----
-
- 
- 
