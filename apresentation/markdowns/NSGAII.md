@@ -25,9 +25,9 @@ output :
 
 ##  Three Main Features
 
-- Non-dominated sorting
+- Non-dominated Sorting
 - Elitism
-- Crowding distance
+- Crowding Distance
 
 # Non-dominated sorting
 
