@@ -1,3 +1,4 @@
 *.py[cod]
 *.c.o
 *.cpp.o
+__pycache__/*
