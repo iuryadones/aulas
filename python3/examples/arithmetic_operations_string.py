@@ -15,5 +15,5 @@ print(result_2)
 result_3 = string_1 * number_1 + string_2
 print(result_3)
 
-result_4 = str(number_1) + str(number_2) 
+result_4 = str(number_1) + str(number_2)
 print(result_4)

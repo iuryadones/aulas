@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 def imprimir_olar_mundo_1(flag):
     if flag == True:
         print("1 - Olar mundo!")
@@ -8,13 +9,15 @@ def imprimir_olar_mundo_1(flag):
     else:
         pass
 
+
 def imprimir_olar_mundo_2(flag=False):
     if flag:
         print("2 - Olar mundo!")
-    elif not(flag):
+    elif not (flag):
         print("\n2 - ...\n")
     else:
         pass
+
 
 imprimir_olar_mundo_1(False)
 imprimir_olar_mundo_1(True)

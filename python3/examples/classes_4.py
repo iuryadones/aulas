@@ -2,7 +2,6 @@
 
 
 class Pessoa(object):
-
     def __init__(self, name, gender, mass):
         self.gender = gender
         self.mass = mass
@@ -24,4 +23,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

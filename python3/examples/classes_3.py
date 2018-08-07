@@ -2,11 +2,11 @@
 
 
 class Pessoa(object):
-
     def __init__(self, name, gender, mass):
         self.gender = gender
         self.mass = mass
         self.name = name
+
 
 def main():
     pessoa = Pessoa("John", "Male", 84)
@@ -18,4 +18,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

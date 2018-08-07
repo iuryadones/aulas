@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 string_1 = "Hi, "
-string_2 = 'name'
+string_2 = "name"
 string_3 = str(65)
 string_4 = str(3.14)
 

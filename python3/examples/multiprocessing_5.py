@@ -8,8 +8,9 @@ def job(v, num, l=None):
         v.value += num
         print(v.value)
 
+
 def multicore():
-    v = mp.Value('i', 0)
+    v = mp.Value("i", 0)
 
     p1 = mp.Process(target=job, args=(v, 1))
     p2 = mp.Process(target=job, args=(v, 5))
@@ -23,7 +24,8 @@ def chronometer(f):
     start = time.time()
     f()
     end = time.time() - start
-    print(f'{f.__name__} {end:.4f}', end='\n\n')
+    print(f"{f.__name__} {end:.4f}", end="\n\n")
+
 
 if __name__ == "__main__":
     chronometer(multicore)
