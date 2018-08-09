@@ -1,0 +1,5 @@
+{
+  "test_increment.py::test_answer": true,
+  "test_increment.py::test_answer_diff": true,
+  "test_increment.py::test_answer_equal": true
+}
