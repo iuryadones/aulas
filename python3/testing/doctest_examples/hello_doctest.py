@@ -1,6 +1,4 @@
-
-
-def print_hello_world(word='world'):
+def print_hello_world(word="world"):
     """
         >>> print_hello_world()
         hello world
@@ -8,18 +6,22 @@ def print_hello_world(word='world'):
         hello John
     """
 
-    print('hello ' + word)
+    print("hello " + word)
+
 
 if __name__ == "__main__":
     """
         execute_script:
-            python hello_test.py
+            python hello_doctest.py
 
         execute script verbose:
-            python hello_test.py -v
+            python hello_doctest.py -v
 
         execute script verbose:
             import doctest
             doctest.testmod(verbose=True)
     """
-    import doctest; doctest.testmod(verbose=True)
+
+    import doctest
+
+    doctest.testmod(verbose=True)
