@@ -2,9 +2,6 @@
 
 ## Cursos
 
-* C
-* C++
-* Linux Shell e Shell Script
 * Python3
  - advanced
  - basics
@@ -14,10 +11,6 @@
  - physics
  - testing
  - web-django
-* Git
-* Docker
-
-standalone
 
 ## Run
 
