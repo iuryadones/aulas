@@ -38,20 +38,20 @@ $ pyenv install 3.6.4
 Criando um ambiente de trabalho com python
 
 ```bash
-$ pyenv virtualenv 3.6.4 ladc
+$ pyenv virtualenv 3.6.4 lab
 ```
 
 Criando pasta de trabalho
 
 ```bash
-$ mkdir lab
+$ mkdir laboratory
 ```
 
 Iniciando o ambiente de trabalho
 
 ```bash
-$ cd lab
-$ echo "ladc" > .python-version
+$ cd laboratory
+$ echo "lab" > .python-version
 ```
 
 ```bash
