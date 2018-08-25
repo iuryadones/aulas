@@ -5,7 +5,7 @@
 * C
 * C++
 * Linux Shell e Shell Script
-* Python3
+* Python3 
  - advanced
  - basics
  - basics++
@@ -17,7 +17,8 @@
 * Git
 * Docker
 
-standalone
+Temos branch
+ - python3
 
 ## Run
 
