@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Prof. Iury Adones">
-  <title>Python</title>
+  <title>Python Easy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1613,14 +1613,18 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Python</h1>
+  <h1 class="title">Python Easy</h1>
   <p class="author">Prof. Iury Adones</p>
 </section>
 
 <section><section id="python3" class="title-slide slide level1"><h1>Python3</h1></section><section class="slide level2">
 
-<p>Instalando python 3.x no windows.</p>
-<p>Download: www.python.org</p>
+<p>História…</p>
+</section></section>
+<section><section id="download-and-install" class="title-slide slide level1"><h1>Download and Install</h1></section><section class="slide level2">
+
+<p>Instalando Python 3.x no Windows</p>
+<p>Download: <a href="https://www.python.org" title="Python">python.org</a></p>
 </section><section class="slide level2">
 
 <p>Instalando no Ubuntu</p>
@@ -1631,61 +1635,299 @@ transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1">$ <span class="fu">sudo</span> pacman -S python</a></code></pre></div>
 </section><section class="slide level2">
 
-<p>Executar python</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="ex">python</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Python</span> 3.x.x (default, May 11 2018, <span class="co">##:##:##) </span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">[<span class="ex">GCC</span> 8.1.0] on linux</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> </a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="ex">python</span> --version</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Python</span> 3.x.x</a></code></pre></div>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(<span class="st">'Olá mundo!'</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">Ol</span>á mundo!</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span><span class="fu">exit()</span></a></code></pre></div>
+</section></section>
+<section><section id="executar-python" class="title-slide slide level1"><h1>Executar Python</h1></section><section class="slide level2">
+
+<p>Windows:</p>
+<ul>
+<li class="fragment">Pesquise por <code>prompt de commandos</code>, mas também conhecido como <code>cmd</code></li>
+</ul>
+<p>Linux e Mac:</p>
+<ul>
+<li class="fragment">Pesquise por <code>terminal</code></li>
+</ul>
+</section><section class="slide level2">
+
+<p>O <code>terminal</code> e <code>prompt</code> são usados para gerenciar o sistema operacional e ambiente de desenvolvimento, também podemos enviar linhas de commandos que serão interpretadas e executadas.</p>
+<p>Atualmente os interpretadores de comandos são commandos como <code>shell</code>.</p>
+</section><section class="slide level2">
+
+<p>Vamos iniciar o <code>shell</code> do python</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1">$ <span class="ex">python</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">Python</span> 3.x.x (default, May <span class="co">## ####, ##:##:##) </span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">[<span class="ex">GCC</span> <span class="co">#.#.# ########] on linux</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> <span class="ex">2+2</span> </a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="ex">4</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="op">&gt;&gt;&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Como identificar se estamos no shell do python?</p>
+<ul>
+<li class="fragment">A linha de commando usa <span style="background-color:white; color:black"><code>&gt;&gt;&gt;</code></span></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(<span class="st">'Olá mundo!'</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="ex">Ol</span>á mundo!</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> <span class="fu">exit()</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Por que tenho que abrir <code>(</code> e fechar <code>)</code> no comando exit?</p>
+<ul>
+<li class="fragment">Linguagem de programação é puramente linguagem matemática
+<ul>
+<li class="fragment"><p><code>f(x) = x*2</code></p></li>
+<li class="fragment"><code>f(x=0) = 0</code></li>
+<li class="fragment"><code>f(x=1) = 2</code></li>
+<li class="fragment"><p><code>f(x=2) = 4</code></p></li>
+</ul></li>
+<li class="fragment"><code>exit()</code> -&gt; A função envia uma mensagem ao sistema operacional que deseja sair do shell do python</li>
+</ul>
 </section></section>
 <section><section id="python-types-variables" class="title-slide slide level1"><h1>Python types variables</h1></section><section class="slide level2">
 
 <p>Interger - <code>int</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">0</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="dv">1</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="dv">-53</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="dv">22</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="dv">100</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="dv">0</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="dv">1</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="dv">-53</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="dv">22</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="dv">100</span></a></code></pre></div>
 </section><section class="slide level2">
 
 <p>Float - <code>float</code></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fl">0.0</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="fl">1.2</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="fl">-34.44</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="fl">234.23</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="fl">3e3</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="fl">5E4</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="fl">6e-10</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="fl">2E-10</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fl">1.2</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="fl">-34.44</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fl">234.23</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="fl">3e3</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="fl">5E4</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="fl">6e-10</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="fl">2E-10</span></a></code></pre></div>
 </section><section class="slide level2">
 
 <p>String - <code>str</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">&quot;Olá mundo&quot;</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">&quot;1º lugar&quot;</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">'Preço 3.56'</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">'A festa foi &quot;divertida&quot;'</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co">&quot;Olá mundo&quot;</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">&quot;1º lugar&quot;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">'Preço 3.56'</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">'A festa foi &quot;divertida&quot;'</span></a></code></pre></div>
 </section><section class="slide level2">
 
 <p>List - <code>list</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">[<span class="st">'maçã'</span>, <span class="st">'banana'</span>]</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">[<span class="dv">1</span>, <span class="st">'maçã'</span>, <span class="dv">2</span>, <span class="st">'banana'</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">[<span class="st">'maçã'</span>, <span class="st">'banana'</span>]</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">[<span class="dv">1</span>, <span class="st">'maçã'</span>, <span class="dv">2</span>, <span class="st">'banana'</span>]</a></code></pre></div>
 </section><section class="slide level2">
 
 <p>Dicionary - <code>dict</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">{<span class="st">&quot;cpf&quot;</span>: <span class="st">&quot;094.940.490-04&quot;</span>}</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">{<span class="dv">001</span>: {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;Usuário de Python&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">22</span>}}</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">{<span class="st">&quot;cpf&quot;</span>: <span class="st">&quot;094.940.490-04&quot;</span>}</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">{<span class="dv">001</span>: {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;Usuário de Python&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">22</span>}}</a></code></pre></div>
 </section><section class="slide level2">
 
 <p>Set - <code>set</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">{<span class="st">'maçã'</span>, <span class="st">'uva'</span>, <span class="st">'queijo'</span>}</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">{[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],<span class="st">'maçã'</span>}</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1">{<span class="st">'maçã'</span>, <span class="st">'uva'</span>, <span class="st">'queijo'</span>}</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">{[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],<span class="st">'maçã'</span>}</a></code></pre></div>
+</section></section>
+<section><section id="cronograma" class="title-slide slide level1"><h1>Cronograma</h1></section><section class="slide level2">
+
+<ol type="1">
+<li class="fragment">Python Básico</li>
+<li class="fragment">Arquivos</li>
+<li class="fragment">Estruturas de controle</li>
+<li class="fragment">Módulos padrões</li>
+<li class="fragment">Funções</li>
+<li class="fragment">Módulos e Pacotes</li>
+<li class="fragment">Python funcional</li>
+</ol>
+</section><section class="slide level2">
+
+<h3 id="python-básico">1.1 - Python Básico</h3>
+<p>Python é uma Linguagem interpretada</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1">$ <span class="ex">python</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="ex">Python</span> 3.6.2 (default, Jul 20 2017, 03:52:27) </a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">[<span class="ex">GCC</span> 7.1.1 20170630] on linux</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(<span class="st">&quot;Olá Mundo!&quot;</span>)</a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="ex">Ol</span>á Mundo</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="tipagem-dinâmica">1.2 - Tipagem dinâmica</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = 1</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'int'</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="st">'abacaxi'</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'str'</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = 1.0</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'float'</span><span class="op">&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="tipagem-dinâmica-1">1.2.1 - Tipagem dinâmica</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = [1, 2.2, <span class="st">'23'</span>, <span class="st">'ola'</span>, None]</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'list'</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="dt">{1,2}</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'set'</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = <span class="dt">{1:2}</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'dict'</span><span class="op">&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="script-com-python">1.3 - Script com python</h3>
+<blockquote>
+<p>Extensão python <code>.py</code></p>
+</blockquote>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1">$ <span class="fu">touch</span> programa-init.py</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">$ <span class="bu">echo</span> <span class="st">&quot;print('Ola mundo')&quot;</span> <span class="op">&gt;&gt;</span> programa-init.py</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">$ <span class="ex">python</span> programa-init.py</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="ex">Ola</span> mundo</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="script-com-python-1">1.3.1 - Script com python</h3>
+<blockquote>
+<p>Extensão python <code>.py</code></p>
+</blockquote>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1">$ <span class="bu">echo</span> <span class="st">&quot;print('Ola novamente')&quot;</span> <span class="op">&gt;</span> programa-other.py</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">$ <span class="ex">python</span> programa-other.py</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="ex">Ola</span> novamente</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="delimitado-por-indentação">1.4 - Delimitado por indentação</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">a <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="bu">print</span>(<span class="st">&quot;O valor de a é &quot;</span>)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="cf">if</span> a <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb17-4" data-line-number="4">    <span class="bu">print</span> <span class="st">&quot;zero&quot;</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb17-6" data-line-number="6">    <span class="bu">print</span> a</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="listas">1.5 - Listas []</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">a</span> = [<span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, 1, 2, 5.0]</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(a[0])</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">&quot;A&quot;</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(len(a))</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="ex">5</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a[4])</a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="op">&lt;</span><span class="ex">class</span> <span class="st">'float'</span><span class="op">&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="é-legal-mexer-com-listas">1.5.1 - É legal mexer com listas</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1">liguagem <span class="op">=</span> <span class="st">&quot;python&quot;</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">caracter <span class="op">=</span> <span class="bu">list</span>(liguagem)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="bu">print</span>(caracter)</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">palavra <span class="op">=</span> <span class="st">&quot;&quot;</span>.join(caracter)</a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="bu">print</span>(palavra)</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="lista-é-mutável">1.5.2 - Lista é mutável</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1">matrix <span class="op">=</span> [<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">matrix <span class="op">=</span> matrix<span class="op">*</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="bu">print</span>(matrix)</a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">matrix[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5"><span class="bu">print</span>(matrix)</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="saiba-mais-sobre-listas">1.5.3 - Saiba mais sobre listas</h3>
+<p>About list():</p>
+<ul>
+<li class="fragment">help(list) ou help([])</li>
+<li class="fragment">dir(list) ou dir([])</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="dicionários-dict">1.6 - Dicionários dict()</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1">dic <span class="op">=</span> {<span class="st">'lang'</span>: <span class="st">&quot;python&quot;</span>}</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="bu">print</span>(dic[<span class="st">'lang'</span>])</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">dic[<span class="st">&quot;lib&quot;</span>] <span class="op">=</span> <span class="st">'django'</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="bu">print</span>(dic)</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7"><span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{}</span><span class="ch">\n</span><span class="st">&quot;</span>.<span class="bu">format</span>(dic.keys()))</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">%</span>dic.values())</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="dicionários-dict-1">1.6.1 - Dicionários dict()</h3>
+<p>About dict():</p>
+<ul>
+<li class="fragment">help(dict)</li>
+<li class="fragment">dir(dict)</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="tuplas-tuple">1.7 - Tuplas tuple()</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">1</span>,2,3</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">(</span><span class="ex">1</span>, 2, 3<span class="kw">)</span></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> <span class="ex">tuple</span>([1, 2, 3])</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="kw">(</span><span class="ex">1</span>, 2, 3<span class="kw">)</span></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> <span class="ex">t</span> = tuple([0, 0, 0])</a>
+<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="op">&gt;&gt;&gt;</span> <span class="ex">t</span>[1] = 2</a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"><span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">  <span class="ex">File</span> <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb22-9" data-line-number="9"><span class="ex">TypeError</span>: <span class="st">'tuple'</span> object does not support item assignment</a>
+<a class="sourceLine" id="cb22-10" data-line-number="10"><span class="op">&gt;&gt;&gt;</span> </a>
+<a class="sourceLine" id="cb22-11" data-line-number="11"><span class="op">&gt;&gt;&gt;</span> <span class="ex">l</span> = list(t)</a>
+<a class="sourceLine" id="cb22-12" data-line-number="12"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(l)</a>
+<a class="sourceLine" id="cb22-13" data-line-number="13">[<span class="ex">0</span>, 0, 0]</a>
+<a class="sourceLine" id="cb22-14" data-line-number="14"><span class="op">&gt;&gt;&gt;</span> <span class="ex">l</span>[1] = 2</a>
+<a class="sourceLine" id="cb22-15" data-line-number="15"><span class="op">&gt;&gt;&gt;</span> <span class="ex">print</span>(l)</a>
+<a class="sourceLine" id="cb22-16" data-line-number="16">[<span class="ex">0</span>, 2, 0]</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="tuplas-tuple-1">1.7.1 - Tuplas tuple()</h3>
+<p>About tuple():</p>
+<ul>
+<li class="fragment">help(tuple)</li>
+<li class="fragment">dir(tuple)</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="conjuntos-set">1.8 - Conjuntos set()</h3>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="kw">set(</span>[<span class="ex">1</span>,2,3,3,2,1]<span class="kw">)</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">{<span class="ex">1</span>, 2, 3}</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> <span class="ex">s</span> = {1, 2, 3}</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> <span class="ex">s.union</span>(<span class="dt">{2,3,5}</span>)</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">{<span class="ex">1</span>, 2, 3, 5}</a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="set">1.8 - set()</h3>
+<p>About set():</p>
+<ul>
+<li class="fragment">help(set)</li>
+<li class="fragment">dir(set)</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="repetições">Repetições</h3>
+</section><section class="slide level2">
+
+<h3 id="estrutura-de-controle">Estrutura de controle</h3>
+</section><section class="slide level2">
+
+<h3 id="arquivos">Arquivos</h3>
+</section><section class="slide level2">
+
+<h3 id="módulos-padrões">Módulos padrões</h3>
+</section><section class="slide level2">
+
+<h3 id="funções">Funções</h3>
+</section><section class="slide level2">
+
+<h3 id="módulos-e-pacotes">Módulos e Pacotes</h3>
+</section><section class="slide level2">
+
+<h3 id="classes">Classes</h3>
+</section><section class="slide level2">
+
+<h3 id="python-funcional">Python funcional</h3>
 </section></section>
     </div>
   </div>
