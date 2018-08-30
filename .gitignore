@@ -1,5 +1,5 @@
-*.py[cod]
 *.c.o
 *.cpp.o
-__pycache__/*
+*.py[cod]
 .pytest_cache/*
+__pycache__/*

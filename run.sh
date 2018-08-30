@@ -10,16 +10,34 @@
 # pandoc -t revealjs -s $1 -o $2 --highlight-style=haddock --self-contained --slide-level=2 --standalone --smart
 
 
+# pandoc -toc -s \
+#        -i \
+#        --from=markdown \
+#        --standalone \
+#        --number-sections \
+#        --to=html5 \
+#        --highlight-style=kate \
+#        --self-contained \
+#        --slide-level=2 \
+#        --resource-path=. \
+#        --variable theme="black" \
+#        --variable transition="linear" \
+#        -t revealjs $1 \
+#        --mathjax \
+#        -o $2
+
 pandoc -toc -s \
        -i \
        --from=markdown \
        --standalone \
-       --to=html5 \
+       --number-sections \
        --highlight-style=kate \
        --self-contained \
        --slide-level=2 \
+       --wrap=auto \
+       --incremental \
+       --columns 80 \
        --resource-path=. \
-       --variable theme="black" \
-       --variable transition="linear" \
-       -t revealjs $1 \
+       --variable theme="Frankfurt" \
+       -t beamer $1 \
        -o $2
