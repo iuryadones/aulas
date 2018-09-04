@@ -56,5 +56,3 @@ def new_numeral_system_3(number):
             break
 
     return result
-
-

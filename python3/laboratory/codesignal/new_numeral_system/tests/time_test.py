@@ -5,55 +5,44 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
-from statistics import mean
-from statistics import median
-from statistics import variance
-from statistics import stdev
-
-from time import time
-
 import mods
+from decoretors import cronometer
 
-
-def cronometer(func):
-    def running():
-        num = 30
-
-        _r = []
-        for _ in range(num):
-            init = time()
-            func()
-            end = time()
-            _r.append(end - init)
-
-        print(end="\n")
-        print(f"function: {func.__name__}")
-        print(f"iterations: {num}")
-        print(f"time mean: {mean(_r):2.4e}")
-        print(f"time median: {median(_r):2.4e}")
-        print(f"time stdev: {stdev(_r):2.4e}")
-        print(f"time variance: {variance(_r):2.4e}")
-        print(end="\n")
-
-    return running
+import pytest
 
 
 @cronometer
-def lafunc_1():
+def test_getattr():
     modules = [m for m in dir(mods) if not m.startswith("__")]
-    print(getattr(mods, modules[0])("G"))
+
+    for module in modules:
+        getattr(mods, module)("G")
 
 
 @cronometer
-def func_2():
-    modules = list(m for m in dir(mods) if not m.startswith("__"))
-    print(getattr(mods, modules[1])("G"))
+def test_exec():
+    modules = [m for m in dir(mods) if not m.startswith("__")]
+
+    for module in modules:
+        exec(f"{mods.__name__}.{module}('G')")
+
+
+@cronometer
+def test_eval():
+    modules = [m for m in dir(mods) if not m.startswith("__")]
+
+    for module in modules:
+        eval(f"{mods.__name__}.{module}('G')")
 
 
 def main():
-    lafunc_1()
-    func_2()
+    _map = map(lambda k: globals()[k] if "test_" in k else None, globals())
+    _filter = filter(lambda f: f if f is not None else None, _map)
+
+    for func in _filter:
+        func()
 
 
 if __name__ == "__main__":
     main()
+    pytest.main([__file__])

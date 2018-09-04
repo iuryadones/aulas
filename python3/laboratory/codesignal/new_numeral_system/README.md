@@ -1,5 +1,3 @@
-""""
-
 Your Informatics teacher at school likes coming up with new ways to help you
 understand the material. When you started studying numeral systems, he
 introduced his own numeral system, which he's convinced will help clarify
@@ -37,32 +35,3 @@ should be sorted by "letter1".
 
 Note that "letter1 + letter2" and "letter2 + letter1" are equal pairs and we
 don't consider them to be different.
-
-""""
-
-def test_time(func):
-    import time
-
-    init = time.time()
-    func()
-    end = time.time()
-    print(f"function: {func.__name__}\ntime: {end-init}\n")
-
-
-def run_1():
-    number = "G"
-    new_numeral_system_1(number)
-
-
-def run_2():
-    number = "G"
-    new_numeral_system_2(number)
-
-
-def main():
-    test_time(run_1)
-    test_time(run_2)
-
-
-if __name__ == "__main__":
-    main()
