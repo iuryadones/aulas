@@ -786,7 +786,7 @@ nota mínima.
 
 Média: $$ \bar{x} = \frac{1}{n}\sum_{i=0}^{n-1} x_{i} $$
 
-Desvio padrão: $$ s = \sqrt{\frac{1}{n}\sum_{i=0}^{n-1}(x_{i} - \bar{x})} $$
+Desvio padrão: $$ s = \sqrt{\frac{1}{n-1}\sum_{i=0}^{n-1}(x_{i} - \bar{x})} $$
 
 ---
 
