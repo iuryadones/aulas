@@ -38,6 +38,6 @@ pandoc -toc -s \
        --incremental \
        --columns 80 \
        --resource-path=. \
-       --variable theme="Frankfurt" \
+       --variable theme="Boadilla" \
        -t beamer $1 \
        -o $2

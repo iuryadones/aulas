@@ -60,35 +60,48 @@ Python 3.7.x
 
 ---
 
-## Instalando Python 3.7 no Windows
+## Install Python 3.7 no Windows
 
 ### Download 
 site: [python.org](https://www.python.org "Python")
 
 ---
 
-## Instalando no Ubuntu
+## Install python3 with Ubuntu
 
-### Abra o terminal
+### Open terminal
 shortcut: `ctrl + alt + t`
 
-Digite
-
+write command line:
 ```{.bash }
 sudo apt-get install python3
+```
+---
+
+## Names
+
+sudo: SuperUser Do
+
+apt: Advanced Package Tool
+
+---
+
+## Install python with Archlinux
+
+### Open terminal
+
+write command line:
+```bash
+sudo pacman -S python
 ```
 
 ---
 
-## Instalando no Archlinux
+## Names
 
-### Abra o terminal
+pacman: Package Manager
 
-Digite
-
-```bash
-sudo pacman -S python
-```
+-S or --sync: Synchronize packages
 
 # Executar Python
 
@@ -284,7 +297,7 @@ None
 
 ---
 
-## Python Básico 
+## Python Básico - Tipagem
 
 ### Tipagem dinâmica
 ```python
@@ -301,7 +314,7 @@ None
 
 ---
 
-## Python Básico 
+## Python Básico - Tipagem
 
 ### Tipagem dinâmica
 ```python 
@@ -320,7 +333,7 @@ None
 
 ## Python Básico
 
-### Input de variáveis
+### Entrada de variáveis
 ```python
 >>> valor_in = input("Digite um valor: ")
 Digite um valor: 10
@@ -338,7 +351,7 @@ Digite um valor: 10
 
 ---
 
-## Python Básico 
+## Python Básico - Extensão
 
 > Extensão do arquivo em python é **`.py`**
 
@@ -439,7 +452,7 @@ Módulo
 
 ---
 
-## Python Básico
+## Python Básico - exemplo de script
 
 ### Crie um arquivo chamado `mult.py`
 ```python
@@ -457,62 +470,62 @@ x, y = int(x), int(y)
 result = x * y
 
 print('x: %d, y: %f' %(x,y))
-print('Resultado: %i' %result)
+print('Resulta: %i' %result)
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Modos de imprimir
 
 ### 1 - Forma de imprimir na tela
 ```python
-print(f'x: {}, y: {}'.format(x, y))
-print(f'Resultado: {}'.format(result))
+print('x: {}, y: {}'.format(x, y))
+print('Resulta: {}'.format(result))
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Modos de imprimir
 
 ### 2 - Forma de imprimir na tela
 ```python
-print(f'x: {1}, y: {0}'.format(y, x))
-print(f'Resultado: {0}'.format(result))
+print('x: {1}, y: {0}'.format(y, x))
+print('Resulta: {0}'.format(result))
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Modos de imprimir
 
 ### 3 - Forma de imprimir na tela
 ```python
-print(f'x: {_x}, y: {_y}'.format(_y=y, _x=x))
-print(f'Resultado: {r}'.format(r=result))
+print('x: {_x}, y: {_y}'.format(_y=y, _x=x))
+print('Resulta: {r}'.format(r=result))
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Modos de imprimir
 
 ### 4 - Forma de imprimir na tela
 ```python
 print(f'x: {x}, y: {y}')
-print(f'Resultado: {result}')
+print(f'Resulta: {result}')
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Modos de imprimir
 
 ### 5 - Forma de imprimir na tela
 ```python
 print(f'x: {x}, y: {y}')
-print(f'Resultado: {x * y}')
+print(f'Resulta: {x * y}')
 ```
 
 ---
 
-## Python Básico
+## Python Básico - Prática
 
 ### Exercício
 
@@ -522,7 +535,40 @@ Faça um Programa que peça um número e então mostre a mensagem.
 
 ---
 
-## Python Básico
+## Python Básico - Solução
+
+### 1 - `programa_1.py`
+```python
+number = input("Digite um número: ")
+
+content = "O número informado foi" 
+
+print(content, number)
+```
+
+---
+
+## Python Básico - Solução
+
+### 2 - `programa_2.py`
+```python
+number = input("Informe o número: ")
+
+print(f"O número informado foi {number}")
+```
+
+---
+
+## Python Básico - Solução
+
+### 3 - `programa_3.py`
+```python
+print(f"O número informado foi {input('Qual o número: ')}")
+```
+
+---
+
+## Python Básico - Prática
 
 ### Exercício
 
@@ -530,18 +576,122 @@ Faça um Programa que peça as 4 notas bimestrais e mostre a média.
 
 ---
 
-## Python Básico
+## Python Básico - Solução
+
+### 1 - `programa_1.py`
+```python
+nota_1 = input("1º nota do bimestre: ")
+nota_2 = input("2º nota do bimestre: ")
+nota_3 = input("3º nota do bimestre: ")
+nota_4 = input("4º nota do bimestre: ")
+
+semestre_1 = float(nota_1) + float(nota_2)
+semestre_2 = float(nota_3) + float(nota_4)
+
+soma = semestre_1 + semestre_2 
+média = soma / 4
+
+print(média)
+```
+
+---
+
+## Python Básico - Solução
+
+### 2 - `programa_2.py`
+```python
+nota_1 = float(input("1º nota do bimestre: "))
+nota_2 = float(input("2º nota do bimestre: "))
+nota_3 = float(input("3º nota do bimestre: "))
+nota_4 = float(input("4º nota do bimestre: "))
+
+média = (nota_1 + nota_2 + nota_3 + nota_4) / 4
+
+print(média)
+```
+
+---
+
+## Python Básico - Solução
+
+### 3 - `programa_3.py`
+```python
+soma = 0
+i = 1; nota = input(f"{i}º nota do bimestre: ")
+soma = soma + float(nota)
+i = i + 1; nota = input(f"{i}º nota do bimestre: ")
+soma = soma + float(nota)
+
+i += 1
+nota = input(f"{i}º nota do bimestre: ")
+soma += float(nota)
+i += 1
+nota = input(f"{i}º nota do bimestre: ")
+soma += float(nota)
+
+média = soma / i
+print(média)
+```
+
+---
+
+## Python Básico - Prática
 
 ### Exercício
 
 Faça um Programa que peça a temperatura em graus Farenheit, transforme e mostre
 a temperatura em graus Celsius.
 
-$C = \frac{5(F - 32)}{9}$
+$$C = \frac{5(F - 32)}{9}$$
 
 ---
 
-## Python Básico 
+## Python Básico - Solução
+
+### 1 - `programa_1.py`
+```python
+farenheit = float(input("Temperatura Farenheit: "))
+
+c = (5 * (farenheit - 32)) / 9
+
+print("Temperatura em ºC é", c)
+```
+
+---
+
+## Python Básico - `list()`
+
+### Listas `[]`
+```python
+r_index = [0, 1, 2, 3]
+l_index = [-4, -3, -2, -1]
+
+str_list = ['U', 'F', 'P', 'E']
+
+print(str_list[0], str_list[-4])
+print(str_list[1], str_list[-3])
+print(str_list[2], str_list[-2])
+print(str_list[3], str_list[-1])
+```
+
+---
+
+## Python Básico - `list()`
+
+### Listas `[]`
+```python
+str_list = ['U', 'F', 'P', 'E']
+print(str_list[0::])
+print(str_list[1::])
+print(str_list[2::])
+print(str_list[3::])
+```
+
+[ start : end : step]
+
+---
+
+## Python Básico - `list()`
 
 ### Listas `[]`
 ```bash
@@ -552,11 +702,13 @@ $C = \frac{5(F - 32)}{9}$
 5
 >>> type(a[4])
 <class 'float'>
+>>> type(a[0])
+<class 'str'>
 ```
 
 ---
 
-## Python Básico 
+## Python Básico - `list()`
 
 ### É legal mexer com listas
 
@@ -571,13 +723,13 @@ print(palavra)
 
 ---
 
-## Python Básico 
+## Python Básico - `list()`
 
 ### Lista é mutável
 
 ```python
 matrix = [0]
-matrix = matrix*3
+matrix = matrix * 3
 print(matrix)
 matrix[1] = 2
 print(matrix)
@@ -585,19 +737,81 @@ print(matrix)
 
 ---
 
-## Python Básico 
+## Python Básico - `list()`
+
+### Builtins `list()`
+
+  - `len(list)`
+  - `max(list)`
+  - `min(list)`
+  - `list(sequence)`
+
+---
+
+## Python Básico - `list()`
+
+### Methods `list()`
+
+  - `list.append(object)`
+  - `list.count(object)`
+  - `list.extend(sequence)`
+  - `list.index(object)`
+  - `list.insert(index, object)`
+  - `list.pop(object=list[-1])`
+  - `list.remove(object)`
+  - `list.reverse(object)`
+  - `list.sort(object)`
+
+---
+
+## Python Básico - `list()`
 
 ### About `list()`
 ```python
->>> help(list)
+>>> help(list) or help([])
 ```
 ```python
->>> dir(list)
+>>> dir(list) or dir([])
 ```
 
 ---
 
-## Python Básico 
+## Python Básico - Prática
+
+### Exercício
+
+Faça um Programa que peça as 4 notas bimestrais e adicione em uma lista, depois
+calcule e mostre as informações a média, mediana, desvio padrão, nota máxima e
+nota mínima.
+
+Média: $$ \bar{x} = \frac{1}{n}\sum_{i=0}^{n-1} x_{i} $$
+
+Desvio padrão: $$ s = \sqrt{\frac{1}{n}\sum_{i=0}^{n-1}(x_{i} - \bar{x})} $$
+
+---
+
+## Python Básico - Prática
+
+### Iterations - `for`
+```python
+>>> notas = [10, 4.5, 2.8, 6.0]
+>>> for nt in notas:
+>>>     print(nt)
+10
+4.5
+2.8
+6.0
+```
+
+Obs: Na linha do **`for`** tem que ser finalizado com **`:`** e nas linhas abaixo
+coloque sempre *4 espaços*, logo podes escrever o código que será executado
+pelo **`for`**.
+
+Refaça o exercício anterior, mas agora use **`for`**.
+
+---
+
+## Python Básico - `dict()`
 
 ### Dicionários `dict()`
 
@@ -606,6 +820,8 @@ dic = {'lang': "python"}
 print(dic['lang'])
 
 dic["lib"] = 'django'
+dic["lib"] = 'numpy'
+dic["lib"] = 'pandas'
 print(dic)
 
 print("{}\n".format(dic.keys()))
