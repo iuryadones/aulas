@@ -1,0 +1,653 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\usetheme{Boadilla}
+
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[cache=false]{minted}
+
+\usepackage{pgfpages}
+\usepackage{listings}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{lmodern}
+
+\usepackage{hyperref}
+
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\usepackage{DejaVuSansMono}
+
+\beamertemplatenavigationsymbolsempty
+
+\tcbuselibrary{breakable}
+\tcbuselibrary{listings}
+\tcbuselibrary{minted}
+\tcbuselibrary{skins}
+
+\definecolor{codebg}{RGB}{250,250,250} % kate
+\definecolor{linenosbg}{RGB}{220,220,220}
+\definecolor{monokaibg}{HTML}{282828} % monokai
+
+\renewcommand*\familydefault{\ttdefault}
+\renewcommand\listoflistingscaption{List of source codes}
+\renewcommand\theFancyVerbLine{\normal\arabic{FancyVerbLine}}
+
+\newtcblisting{python3}{
+    listing engine=minted,
+    listing only,
+    minted style=kate,
+    minted language=python3,
+    minted options={fontsize=\small,linenos,numbersep=3mm},
+    colback=codebg,
+    colframe=codebg,
+    left=6mm,
+    enhanced,
+    overlay={\begin{tcbclipinterior}\fill[linenosbg](frame.south
+    west)rectangle([xshift=5mm]frame.north west) ;\end{tcbclipinterior}}
+}
+
+\newtcblisting{bash}{
+    listing engine=minted,
+    listing only,
+    minted style=monokai,
+    minted language=bash,
+    minted options={fontsize=\small,linenos,numbersep=3mm},
+    colback=monokaibg,
+    colframe=monokaibg,
+    left=6mm,
+    enhanced,
+    overlay={\begin{tcbclipinterior}\fill[linenosbg](frame.south
+    west)rectangle([xshift=5mm]frame.north west) ;\end{tcbclipinterior}}
+}
+
+\title[Python Easy]{
+    {Hello, scientists!}\\[10mm]
+    Would scientist use python to do your own academic research?
+}
+
+\author[Prof.~Iury Adones]{
+    Prof.~Iury Adones Xavier dos Santos
+}
+
+\institute[UFRPE]{
+    Rural Federal University of Pernambuco
+}
+
+\date[Brazil, Recife--PE]{}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}{Python Collections (Arrays)}
+
+There are four collection data types in the Python programming language:
+
+\begin{itemize}[<+->]
+\item \textbf{List}
+    \begin{itemize}
+    \item Is a collection which is \textbf{ordered} and \textbf{changeable}.
+    \item \textbf{Allows duplicate} members.
+    \end{itemize}
+\item \textbf{Tuple}
+    \begin{itemize}
+    \item Is a collection which is \textbf{ordered} and \textbf{unchangeable}.
+    \item \textbf{Allows duplicate} members.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Python Collections (Arrays)}
+
+There are four collection data types in the Python programming language:
+
+\begin{itemize}[<+->]
+\item \textbf{Set}
+    \begin{itemize}
+    \item Is a collection which is \textbf{unordered} and \textbf{unindexed}.
+    \item \textbf{No duplicate} members.
+    \end{itemize}
+\item \textbf{Dictionary}
+    \begin{itemize}
+    \item Is a collection which is \textbf{unordered}, \textbf{changeable} and \textbf{indexed}.
+    \item \textbf{No duplicate} members.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{About List}
+\centering
+\Huge{list()}
+\end{frame}
+
+\begin{frame}[fragile]{List}
+\begin{exampleblock}{Create a List:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Access Items}
+\begin{exampleblock}{Print the second item of the list:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+print(this_list[1])
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Change Item Value}
+\begin{exampleblock}{Change the second item:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list[1] = "blackcurrant"
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{List Length}
+\begin{exampleblock}{Print the number of items in the list:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+print(len(this_list))
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Add Items}
+\begin{exampleblock}{Using the \textbf{append()} method to append an item:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list.append("orange")
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Add Items}
+\begin{exampleblock}{Insert an item as the second position:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list.insert(1, "orange")
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Item}
+\begin{exampleblock}{The textbf{remove()} method removes the specified item:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list.remove("banana")
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Item}
+\begin{exampleblock}{The \textbf{pop()} method removes the specified index, (or the last item if index is not specified):}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list.pop()
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Item}
+\begin{exampleblock}{The \textbf{del} keyword removes the specified index:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+del this_list[0]
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Item}
+\begin{alertblock}{The \textbf{del} keyword can also delete the list completely:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+del this_list
+print(this_list)
+\end{python3}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Item}
+\begin{exampleblock}{The {\color{red}clear()} method empties the list:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+this_list.clear()
+print(this_list)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{The list() Constructor}
+\begin{exampleblock}{Using the list() constructor to make a List:}
+\begin{python3}
+this_list = list(("apple", "banana", "cherry"))
+print(this_list)
+\end{python3}
+\end{exampleblock}
+
+Note the double round-brackets
+\end{frame}
+
+\begin{frame}[fragile]{List Methods}
+Python has a set of built-in methods that you can use on lists.
+\begin{itemize}[<+->]
+\item How to get all the methods of \textbf{list()}?
+\item With \textbf{dir()}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{List Methods}
+\begin{exampleblock}{Use \textbf{dir()}:}
+\begin{python3}
+list_all_methods = dir(list)
+print(list_all_methods)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{List Methods}
+\begin{exampleblock}{Look up!}
+\begin{python3}
+list.append(self, value)
+list.clear(self)
+list.insert(self, index, value)
+list.pop(self, index=-1)
+list.remove(self, value)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{List Methods}
+\begin{exampleblock}{More on Lists}
+\begin{python3}
+list.copy(self)
+list.count(self, value)
+list.extend(self, iterable)
+list.index(self, value, start=0, stop=len(self))
+list.reverse(self)
+list.sort(self, key=None, reverse=False)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Method copy()}
+\begin{exampleblock}{Copy}
+\begin{python3}
+fruits = ['orange', 'apple', 'pear',
+          'banana', 'kiwi', 'apple',
+          'banana']
+
+a_fruits = fruits
+b_fruits = fruits.copy()
+
+id_a = id(a_fruits)
+id_b = id(b_fruits)
+id_c = id(fruits)
+
+print(id_a == id_c)
+print(id_b == id_c)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Methods count() and index()}
+\begin{exampleblock}{Count and Index}
+\begin{python3}
+fruits = ['orange', 'apple', 'pear',
+          'banana', 'kiwi', 'apple',
+          'banana']
+
+print(fruits.count('apple'))
+print(fruits.count('tangerine'))
+
+print(fruits.index('banana'))
+print(fruits.index('banana', 4))
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Methods reverse() and sort()}
+\begin{exampleblock}{Copy}
+\begin{python3}
+fruits = ['orange', 'apple', 'pear',
+          'banana', 'kiwi', 'apple',
+          'banana']
+
+fruits.reverse()
+print(fruits)
+
+fruits.sort()
+print(fruits)
+
+fruits.sort(reverse=True)
+print(fruits)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Methods sort()}
+\begin{exampleblock}{Sort}
+\begin{python3}
+fruits = ['orange', 'apple', 'pear',
+          'banana', 'kiwi', 'apple',
+          'banana']
+
+fruits.sort(key=lambda f: f[-1])
+print(fruits)
+
+fruits.sort(key=lambda f: f[2])
+print(fruits)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Methods extend()}
+\begin{exampleblock}{Extend}
+\begin{python3}
+fruits = ['orange', 'apple', 'pear']
+add_fruits = ['banana', 'kiwi', 'apple', 'banana']
+
+fruits.append(add_fruits)
+print(fruits)
+
+fruits.pop()
+
+fruits.extend(add_fruits)
+print(fruits)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Methods built-ins max() and min()}
+\begin{exampleblock}{Max and Min}
+\begin{python3}
+points = [5.3, 6, 7. 8, 10]
+
+max_point = max(points)
+min_point = min(points)
+
+print(f"Max: {max_point}")
+print(f"Min: {min_point}")
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Loop Through a List}
+\begin{exampleblock}{Print all items in the list, one by one:}
+\begin{python3}
+this_list = ["apple", "banana", "cherry"]
+for x in this_list:
+    print(x)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile] \begin{block}{Pratice}
+Make a Program that asks for the \textbf{\textit{4 bimonthly notes}} and
+\textbf{\textit{adds to a list}}, then calculate and print to show the
+information of \textbf{mean}, \textbf{median}, \textbf{standard deviation},
+\textbf{maximum note} and \textbf{minimum note}.\\[5mm]
+
+Mean: $ \bar{x} = \frac{1}{n}\sum_{i=0}^{n-1} x_{i} $\\[5mm]
+
+Standard deviation: $$ \sigma = \sqrt{\frac{1}{n}\sum_{i=0}^{n-1}(x_{i} - \bar{x})^{2}} $$
+Standard deviation relative to sample: $$ s = \sqrt{\frac{1}{n-1}\sum_{i=0}^{n-1}(x_{i} - \bar{x})^{2}} $$
+\end{block}
+
+\end{frame}
+
+\begin{frame}{About tuple}
+\centering
+\Huge{tuple()}
+\end{frame}
+
+\begin{frame}[fragile]{Tuple}
+\begin{exampleblock}{Create a Tuple:}
+\begin{python3}
+this_tuple = ("apple", "banana", "cherry")
+print(this_tuple)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Access Tuple Items}
+\begin{exampleblock}{Return the item in position 1:}
+\begin{python3}
+this_tuple = ("apple", "banana", "cherry")
+print(this_tuple[1])
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Tuple Length}
+\begin{exampleblock}{Print the number of items in the tuple:}
+\begin{python3}
+this_tuple = ("apple", "banana", "cherry")
+print(len(this_tuple))
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Remove Items}
+\begin{exampleblock}{The del keyword can delete the tuple completely:}
+\begin{python3}
+this_tuple = ("apple", "banana", "cherry")
+del this_tuple
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{The tuple() Constructor}
+\begin{exampleblock}{Using the tuple() method to make a tuple:}
+\begin{python3}
+this_tuple = tuple(("apple", "banana", "cherry"))
+print(this_tuple)
+\end{python3}
+\end{exampleblock}
+
+Note the double round-brackets
+\end{frame}
+
+\begin{frame}[fragile]{Tuple Methods}
+Python has a set of built-in methods that you can use on tuples.
+\begin{itemize}[<+->]
+\item How to get all the methods of \textbf{tuple()}?
+\item With \textbf{dir()}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Tuple Methods}
+\begin{exampleblock}{Use \textbf{dir()}:}
+\begin{python3}
+tuple_all_methods = dir(tuple)
+print(tuple_all_methods)
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Tuple Methods}
+\begin{exampleblock}{More on tuples}
+\begin{python3}
+tuple.count(self, value)
+tuple.index(self, value, start=0, stop=len(self))
+\end{python3}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{The end}
+\centering
+\Large{Thant's all Folks!}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}[fragile]{}
+% \begin{exampleblock}{}
+% \begin{python3}
+
+% \end{python3}
+% \end{exampleblock}
+% \end{frame}
+
+
+
+
+
+
+
+
+% \begin{frame}
+% Each frame should have a title.
+% \end{frame}
+
+% \begin{frame}
+% Without title somethink is missing. 
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{unnumbered lists}
+% \begin{itemize}
+% \item Introduction to  \LaTeX{}  
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX{}  
+% \item Beamer class
+% \end{itemize} 
+% \end{frame}
+
+% \begin{frame}\frametitle{lists with single pauses}
+% \begin{itemize}
+% \item Introduction to  \LaTeX{}  \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX{}  \pause 
+% \item Beamer class
+% \end{itemize} 
+% \end{frame}
+
+% \begin{frame}\frametitle{lists with pause}
+% \begin{itemize}[<+->]
+% \item Introduction to  \LaTeX{}  
+% \item Course 2
+% \item Termpapers and presentations with \LaTeX{}  
+% \item Beamer class
+% \end{itemize} 
+% \end{frame}
+
+% \begin{frame}\frametitle{numbered lists}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX{}   
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX{}  
+% \item Beamer class
+% \end{enumerate}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{numbered lists with single pauses}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX{}  \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX{}  \pause 
+% \item Beamer class
+% \end{enumerate}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{numbered lists with pause}
+% \begin{enumerate}[<+->]
+% \item Introduction to  \LaTeX{}  
+% \item Course 2
+% \item Termpapers and presentations with \LaTeX{}  
+% \item Beamer class
+% \end{enumerate}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Tables}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+% \hline
+% WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+% \hline
+% SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+% \hline
+% \end{tabular}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Tables with pause}
+% \begin{tabular}{c c c}
+% A & B & C \\ 
+% \pause 
+% 1 & 2 & 3 \\  
+% \pause 
+% A & B & C \\ 
+% \end{tabular} 
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{blocs}
+
+% \begin{block}{title of the bloc}
+% bloc text
+% \end{block}
+
+% \begin{exampleblock}{title of the bloc}
+% bloc text
+% \end{exampleblock}
+
+
+% \begin{alertblock}{title of the bloc}
+% bloc text
+% \end{alertblock}
+% \end{frame}
+
+% \begin{frame}[fragile]{Example: code of {\color{cyan}\textbf{python3}}}
+% \begin{python3}
+% class Person:
+%     def __init__(self, name=None):
+%         self.name = f"{name}"
+
+
+% def main():
+%     person = Person()
+%     print(f"hello, {person.name}")
+
+%     person.name = "John"
+%     print(f"hello, {person.name}")
+
+
+% if __name__ == "__main__":
+%     main()
+% \end{python3}
+% \end{frame}
+
+% \begin{frame}[fragile]{Example: \textbf{echo} on {\color{magenta}\textbf{bash}}}
+% \begin{bash}
+% echo "hello, world!"
+% \end{bash}
+% \end{frame}
