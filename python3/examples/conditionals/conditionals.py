@@ -10,9 +10,11 @@ if "Marcus" == name_2:
 else:
     print("Desculpe, não entendo!")
 
-if "Marcus" == name_2:
+if "Marcus" != name_2:
     print(string_1)
 elif "Joe" == name_2:
+    print(string_2)
+elif "Marcus" == name_2:
     print(string_2)
 else:
     print("Desculpe, não entendo!")

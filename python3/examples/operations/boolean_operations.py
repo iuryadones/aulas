@@ -4,29 +4,6 @@ number_1 = 3
 number_2 = 4.5
 number_3 = 3
 
-name_1 = "Marcus"
-name_2 = "Joe"
-string_1 = "olá, Marcus"
-string_2 = "olá, Joe"
-
-result_1 = number_1 == number_2
-print(result_1)
-
-result_2 = number_1 != number_2
-print(result_2)
-
-result_3 = number_1 <= number_2
-print(result_3)
-
-result_4 = number_1 >= number_2
-print(result_4)
-
-result_5 = number_1 < number_2
-print(result_5)
-
-result_6 = number_1 > number_2
-print(result_6)
-
 result_7 = not (number_1 == number_2)
 print(result_7)
 
