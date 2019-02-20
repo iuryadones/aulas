@@ -1,15 +1,9 @@
----
-title    : Python Easy
-author   : Prof. Iury Adones
-output   : 
-    revealjs::revealjs_presentation
----
-
-# Python
+# Python Easy
+## Prof. Iury Adones
 
 ---
 
-##  O que é Python?
+#  O que é Python?
 
   * Python é uma linguagem de programação de alto nível
   * Python é interpretada
@@ -21,9 +15,9 @@ output   :
 
 ---
 
-## História
+# História
 
-### Linguagem **Python**
+## Linguagem **Python**
  * Foi lançada por *Guido van Rossum* em 1991
  * Atualmente o desenvolvimento é aberto (*open-source*)
  * Gerenciado pela organização sem fins lucrativos **Python Software
@@ -31,54 +25,61 @@ output   :
 
 ---
 
-## Lançada pela comunidade python
+# Lançada pela comunidade python
 
-### Versão estável 
+## Versão estável 
+
 Python 3.7.x
 
 ---
 
-## Estilo de tipagem
+# Estilo de tipagem
   * Dinâmica
   * Forte
 
 ---
 
-## Python é uma linguagem multiparadigma
+# Python é uma linguagem multiparadigma
   * Programação Orientação a Objetos
   * Programação Imperativa
   * Programação Funcional
 
 ---
 
-## Referência
+# Referência
 
   * [wikipedia.org/Python](https://pt.wikipedia.org/wiki/Python
 "wikipedia sobre Python")
+
+---
 
 # Download and Install
 
 ---
 
-## Install Python 3.7 no Windows
+# Install Python 3.7 no Windows
 
-### Download 
+## Download 
+
 site: [python.org](https://www.python.org "Python")
 
 ---
 
-## Install python3 with Ubuntu
+# Install python3 with Ubuntu
 
-### Open terminal
+## Open terminal
+
 shortcut: `ctrl + alt + t`
 
 write command line:
-```{.bash }
+
+```bash
 sudo apt-get install python3
 ```
+
 ---
 
-## Names
+# Names
 
 sudo: SuperUser Do
 
@@ -86,11 +87,12 @@ apt: Advanced Package Tool
 
 ---
 
-## Install python with Archlinux
+# Install python with Archlinux
 
-### Open terminal
+## Open terminal
 
 write command line:
+
 ```bash
 sudo pacman -S python
 ```
@@ -103,14 +105,15 @@ pacman: Package Manager
 
 -S or --sync: Synchronize packages
 
-# Executar Python
-
 ---
 
-### Windows
+# Executar Python
+
+## Windows
+
 Pesquise por **`prompt de commandos`**, mas também conhecido como **`cmd`**
 
-### Linux e Mac
+## Linux e Mac
 Pesquise por **`terminal`**
 
 ---
@@ -142,6 +145,7 @@ Python 3.7.x
 ## Vamos iniciar o `shell` do python
 
 ### **`Terminal`** ou **`prompt`**
+
 ```bash
 python
 ```
@@ -166,7 +170,8 @@ Na linha de comando de python tem **`>>>`**
 ## Imprime o ``hello world''
 
 ### Shell do Python
-```python
+
+```bash
 >>> print('Olá mundo!')
 Olá mundo!
 >>> exit()
@@ -748,9 +753,9 @@ print(matrix)
 
 ---
 
-## Python Básico - `list()`
+# Python Básico - `list()`
 
-### Methods `list()`
+## Methods `list()`
 
   - `list.append(object)`
   - `list.count(object)`
@@ -764,9 +769,10 @@ print(matrix)
 
 ---
 
-## Python Básico - `list()`
+# Python Básico - `list()`
 
-### About `list()`
+## About `list()`
+
 ```python
 >>> help(list) or help([])
 ```
@@ -776,10 +782,11 @@ print(matrix)
 
 ---
 
-## Python Básico - Prática
+# Python Básico - Prática
 
-### Exercício
+## Exercício
 
+```
 Faça um Programa que peça as 4 notas bimestrais e adicione em uma lista, depois
 calcule e mostre as informações a média, mediana, desvio padrão, nota máxima e
 nota mínima.
@@ -788,12 +795,14 @@ Média: $$ \bar{x} = \frac{1}{n}\sum_{i=0}^{n-1} x_{i} $$
 
 Desvio padrão: $$ \sigma = \sqrt{\frac{1}{n}\sum_{i=0}^{n-1}(x_{i} - \bar{x})^{2}} $$
 Desvio padrão amostral: $$ s = \sqrt{\frac{1}{n-1}\sum_{i=0}^{n-1}(x_{i} - \bar{x})^{2}} $$
+```
 
 ---
 
-## Python Básico - Prática
+# Python Básico - Prática
 
-### Iterations - `for`
+## Iterations - `for`
+
 ```python
 >>> notas = [10, 4.5, 2.8, 6.0]
 >>> for nt in notas:
@@ -812,9 +821,9 @@ Refaça o exercício anterior, mas agora use **`for`**.
 
 ---
 
-## Python Básico - `dict()`
+# Python Básico - `dict()`
 
-### Dicionários `dict()`
+## Dicionários `dict()`
 
 ```python
 dic = {'lang': "python"}
@@ -831,9 +840,9 @@ print("%s\n" %dic.values())
 
 ---
 
-## Python Básico 
+# Python Básico 
 
-### About `dict()`
+## About `dict()`
 ```python
 >>> help(dict)
 ```
@@ -843,9 +852,10 @@ print("%s\n" %dic.values())
 
 ---
 
-## Python Básico 
+# Python Básico 
 
-### Tuplas `tuple()`
+## Tuplas `tuple()`
+
 ```bash
 >>> 1,2,3
 (1, 2, 3)
@@ -867,9 +877,10 @@ TypeError: 'tuple' object does not support item assignment
 
 ---
 
-## Python Básico 
+# Python Básico 
 
-### About `tuple()`
+## About `tuple()`
+
 ```python
 >>> help(tuple)
 ```
@@ -879,9 +890,10 @@ TypeError: 'tuple' object does not support item assignment
 
 ---
 
-## Python Básico 
+# Python Básico 
 
-### Conjuntos `set()` 
+## Conjuntos `set()` 
+
 ```bash
 >>> set([1,2,3,3,2,1])
 {1, 2, 3}
@@ -892,9 +904,10 @@ TypeError: 'tuple' object does not support item assignment
 
 ---
 
-## Python Básico 
+# Python Básico 
 
-### About `set()`
+## About `set()`
+
 ```python
 >>> help(set)
 ```
@@ -904,9 +917,10 @@ TypeError: 'tuple' object does not support item assignment
 
 ---
 
-## Estrutura de controle
+# Estrutura de controle
 
-### Delimitado por indentação
+## Delimitado por indentação
+
 ```python
 a = 0
 print("O valor de a é ")
